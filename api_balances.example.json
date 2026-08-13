@@ -1,0 +1,17 @@
+[
+  {
+    "name": "DeepSeek",
+    "url": "https://api.deepseek.com/user/balance",
+    "env_var": "DEEPSEEK_API_KEY",
+    "auth": "bearer",
+    "value_path": "balance_infos[0].total_balance"
+  },
+  {
+    "name": "Example (no auth)",
+    "url": "https://api.example.com/status",
+    "headers": {
+      "Accept": "application/json"
+    },
+    "value_path": "status"
+  }
+]
