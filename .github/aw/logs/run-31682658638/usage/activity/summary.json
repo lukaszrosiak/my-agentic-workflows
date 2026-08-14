@@ -1,0 +1,24 @@
+{
+  "schema": "usage-activity-summary/v1",
+  "firewall": {
+    "total_requests": 10,
+    "allowed_requests": 10,
+    "blocked_requests": 0,
+    "allowed_domains": [
+      "api.githubcopilot.com:443"
+    ],
+    "blocked_domains": [],
+    "requests_by_domain": {
+      "api.githubcopilot.com:443": {
+        "allowed": 10,
+        "blocked": 0
+      }
+    }
+  },
+  "safe_outputs": {
+    "total_items": 1,
+    "items_by_type": {
+      "create_issue": 1
+    }
+  }
+}

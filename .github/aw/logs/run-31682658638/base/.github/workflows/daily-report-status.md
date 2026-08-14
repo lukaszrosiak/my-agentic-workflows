@@ -1,6 +1,5 @@
 ---
 name: Daily Report Status
-if: steps.recent.outputs.commit_count != '0'
 on:
   schedule: daily
   workflow_dispatch:
@@ -15,14 +14,6 @@ tools:
     toolsets: [default]
 safe-outputs:
   create-issue:
-steps:
-  - name: Count recent commits
-    id: recent
-    run: |
-      count=$(git log --since="24 hours ago" --oneline | wc -l)
-      echo "commit_count=$count" >> "$GITHUB_OUTPUT"
-      mkdir -p /tmp/gh-aw/agent
-      echo "$count" > /tmp/gh-aw/agent/commit_count.txt
 ---
 
 # Daily Report Status
@@ -31,7 +22,3 @@ Generate an activity report in a new issue. Review the repository activity for t
 last 24 full hours ending at workflow start (UTC), summarize the key updates in
 GitHub-flavored Markdown, and use the configured `create-issue` safe output to
 publish the report. Call `noop` if there were no qualifying updates.
-
-The number of commits from the last 24 hours was precomputed and written to
-`/tmp/gh-aw/agent/commit_count.txt`. Read this file and include the count in
-the report.

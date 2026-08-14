@@ -1,0 +1,39 @@
+# safeoutputs MCP Server Log
+# Started: 2026-08-13T08:36:14.688Z
+# Version: 1.0.0
+
+[2026-08-13T08:36:14.688Z] [safeoutputs] Loading safe-outputs configuration
+[2026-08-13T08:36:14.689Z] [safeoutputs] Reading config from file: /home/runner/work/_temp/gh-aw/safeoutputs/config.json
+[2026-08-13T08:36:14.689Z] [safeoutputs] Config file exists at: /home/runner/work/_temp/gh-aw/safeoutputs/config.json
+[2026-08-13T08:36:14.689Z] [safeoutputs] Config file content length: 165 characters
+[2026-08-13T08:36:14.689Z] [safeoutputs] Config file read successfully, attempting to parse JSON
+[2026-08-13T08:36:14.690Z] [safeoutputs] Successfully parsed config from file with 6 configuration keys
+[2026-08-13T08:36:14.690Z] [safeoutputs] Final processed config: {"create_issue":{"max":1},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"report_incomplete":{}}
+[2026-08-13T08:36:14.690Z] [safeoutputs] Loading safe-outputs tools
+[2026-08-13T08:36:14.691Z] [safeoutputs] Reading tools from file: /home/runner/work/_temp/gh-aw/safeoutputs/tools.json
+[2026-08-13T08:36:14.691Z] [safeoutputs] Tools file exists at: /home/runner/work/_temp/gh-aw/safeoutputs/tools.json
+[2026-08-13T08:36:14.691Z] [safeoutputs] Tools file content length: 10551 characters
+[2026-08-13T08:36:14.691Z] [safeoutputs] Tools file read successfully, attempting to parse JSON
+[2026-08-13T08:36:14.691Z] [safeoutputs] Successfully parsed 5 tools from file
+[2026-08-13T08:36:14.694Z] [safeoutputs] Configured git safe.directory for bridge context: /home/runner/work/my-agentic-workflows/my-agentic-workflows
+[2026-08-13T08:36:14.695Z] [safeoutputs]   output file: /home/runner/work/_temp/gh-aw/safeoutputs/outputs.jsonl
+[2026-08-13T08:36:14.695Z] [safeoutputs]   config: {"create_issue":{"max":1},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"report_incomplete":{}}
+[2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: create_issue
+[2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: missing_tool
+[2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: noop
+[2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: missing_data
+[2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: report_incomplete
+[2026-08-13T08:36:14.697Z] [safeoutputs] Registered tool: create_report_incomplete_issue
+[2026-08-13T08:36:14.697Z] [safeoutputs]   tools: create_issue, missing_tool, noop, missing_data, report_incomplete, create_report_incomplete_issue
+[2026-08-13T08:36:14.697Z] [safeoutputs] v1.0.0 ready on stdio
+[2026-08-13T08:36:14.697Z] [safeoutputs]   tools: create_issue, missing_tool, noop, missing_data, report_incomplete, create_report_incomplete_issue
+[2026-08-13T08:36:14.697Z] [safeoutputs] listening...
+[2026-08-13T08:36:14.699Z] [safeoutputs] recv: {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"clientInfo":{"name":"awmg","version":"v0.4.8"},"protocolVersion":"2025-11-25","capabilities":{"roots":{"listChanged":true}}}}
+[2026-08-13T08:36:14.699Z] [safeoutputs] client info: {"name":"awmg","version":"v0.4.8"}
+[2026-08-13T08:36:14.699Z] [safeoutputs] send: {"jsonrpc":"2.0","id":1,"result":{"serverInfo":{"name":"safeoutputs","version":"1.0.0"},"protocolVersion":"2025-11-25","capabilities":{"tools":{}}}}
+[2026-08-13T08:36:14.700Z] [safeoutputs] recv: {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
+[2026-08-13T08:36:14.700Z] [safeoutputs] ignore notifications/initialized
+[2026-08-13T08:36:14.710Z] [safeoutputs] recv: {"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"create_issue","arguments":{"body":"## Summary (last 24 hours, UTC)\n\n### Commits\n- `b947dad` — \"simple app commit\" (2026-08-13 08:13 UTC)\n\n### Issues\n- **#1** — [github copilot support](../issues/1) — opened\n- **#2** — [\\[aw\\] Issue_summary failed](../issues/2) — opened (auto-generated failure notice)\n\n### Pull Requests\n- None opened, updated, or merged in this window.\n\n### Workflow Runs\n- **Issue_summary** — completed with **failure** (run started 08:14 UTC), which triggered issue #2.\n- **Daily Report Status** — this report's own run, currently in progress.\n\n### Notes\n- The `Issue_summary` workflow failure is worth investigating since it auto-filed issue #2.\n","labels":"[\"daily-report\"]","title":"Daily Activity Report — 2026-08-13"}}}
+[2026-08-13T08:36:14.712Z] [safeoutputs] Calling handler for tool: create_issue
+[2026-08-13T08:36:14.717Z] [safeoutputs] Handler returned for tool: create_issue
+[2026-08-13T08:36:14.717Z] [safeoutputs] send: {"jsonrpc":"2.0","id":2,"result":{"content":[{"type":"text","text":"{\"result\":\"success\"}"}],"isError":false}}

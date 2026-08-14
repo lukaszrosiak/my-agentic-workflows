@@ -1,0 +1,615 @@
+{
+  "timestamp": "2026-08-13T08:35:55.112Z",
+  "providers": {
+    "openai": {
+      "configured": false,
+      "models": null,
+      "model_metadata": null,
+      "target": null
+    },
+    "anthropic": {
+      "configured": false,
+      "models": null,
+      "model_metadata": null,
+      "target": null
+    },
+    "copilot": {
+      "configured": true,
+      "models": [
+        "claude-haiku-4.5",
+        "claude-opus-4.6",
+        "claude-opus-4.7",
+        "claude-opus-4.8",
+        "claude-opus-5",
+        "claude-sonnet-4.5",
+        "claude-sonnet-4.6",
+        "claude-sonnet-5",
+        "gpt-3.5-turbo",
+        "gpt-3.5-turbo-0613",
+        "gpt-4",
+        "gpt-4-0613",
+        "gpt-4-o-preview",
+        "gpt-4.1",
+        "gpt-4.1-2025-04-14",
+        "gpt-41-copilot",
+        "gpt-4o",
+        "gpt-4o-2024-05-13",
+        "gpt-4o-2024-08-06",
+        "gpt-4o-2024-11-20",
+        "gpt-4o-mini",
+        "gpt-4o-mini-2024-07-18",
+        "gpt-5-mini",
+        "gpt-5.3-codex",
+        "gpt-5.4",
+        "gpt-5.4-mini",
+        "gpt-5.6-luna",
+        "gpt-5.6-terra",
+        "mai-code-1-flash-picker",
+        "text-embedding-3-small",
+        "text-embedding-3-small-inference",
+        "text-embedding-ada-002",
+        "trajectory-compaction"
+      ],
+      "model_metadata": [
+        {
+          "id": "claude-haiku-4.5",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 1,
+              "output": 5,
+              "cachedInput": 0.1,
+              "cacheWrite": 1.25
+            }
+          }
+        },
+        {
+          "id": "claude-opus-4.6",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 5,
+              "output": 25,
+              "cachedInput": 0.5,
+              "cacheWrite": 6.25,
+              "threshold": 200000
+            },
+            "long_context": {
+              "input": 5,
+              "output": 25,
+              "cachedInput": 0.5,
+              "cacheWrite": 6.25,
+              "threshold": 936000
+            }
+          }
+        },
+        {
+          "id": "claude-opus-4.7",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 5,
+              "output": 25,
+              "cachedInput": 0.5,
+              "cacheWrite": 6.25,
+              "threshold": 200000
+            },
+            "long_context": {
+              "input": 5,
+              "output": 25,
+              "cachedInput": 0.5,
+              "cacheWrite": 6.25,
+              "threshold": 936000
+            }
+          }
+        },
+        {
+          "id": "claude-opus-4.8",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 5,
+              "output": 25,
+              "cachedInput": 0.5,
+              "cacheWrite": 6.25,
+              "threshold": 200000
+            },
+            "long_context": {
+              "input": 5,
+              "output": 25,
+              "cachedInput": 0.5,
+              "cacheWrite": 6.25,
+              "threshold": 936000
+            }
+          }
+        },
+        {
+          "id": "claude-opus-5",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 5,
+              "output": 25,
+              "cachedInput": 0.5,
+              "cacheWrite": 6.25,
+              "threshold": 200000
+            },
+            "long_context": {
+              "input": 5,
+              "output": 25,
+              "cachedInput": 0.5,
+              "cacheWrite": 6.25,
+              "threshold": 936000
+            }
+          }
+        },
+        {
+          "id": "claude-sonnet-4.5",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 3,
+              "output": 15,
+              "cachedInput": 0.3,
+              "cacheWrite": 3.75
+            }
+          }
+        },
+        {
+          "id": "claude-sonnet-4.6",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 3,
+              "output": 15,
+              "cachedInput": 0.3,
+              "cacheWrite": 3.75,
+              "threshold": 200000
+            },
+            "long_context": {
+              "input": 3,
+              "output": 15,
+              "cachedInput": 0.3,
+              "cacheWrite": 3.75,
+              "threshold": 936000
+            }
+          }
+        },
+        {
+          "id": "claude-sonnet-5",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 2,
+              "output": 10,
+              "cachedInput": 0.2,
+              "cacheWrite": 2.5,
+              "threshold": 200000
+            },
+            "long_context": {
+              "input": 2,
+              "output": 10,
+              "cachedInput": 0.2,
+              "cacheWrite": 2.5,
+              "threshold": 936000
+            }
+          }
+        },
+        {
+          "id": "gpt-3.5-turbo",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-3.5-turbo-0613",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-4",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 2.5,
+              "output": 10,
+              "cachedInput": 1.25,
+              "cacheWrite": 0
+            }
+          }
+        },
+        {
+          "id": "gpt-4-0613",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 2.5,
+              "output": 10,
+              "cachedInput": 1.25,
+              "cacheWrite": 0
+            }
+          }
+        },
+        {
+          "id": "gpt-4-o-preview",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-4.1",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-4.1-2025-04-14",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-41-copilot",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 2,
+              "output": 8,
+              "cachedInput": 0.5,
+              "cacheWrite": 0
+            }
+          }
+        },
+        {
+          "id": "gpt-4o",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-4o-2024-05-13",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-4o-2024-08-06",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-4o-2024-11-20",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-4o-mini",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-4o-mini-2024-07-18",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "gpt-5-mini",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 0.25,
+              "output": 2,
+              "cachedInput": 0.02,
+              "cacheWrite": 0
+            }
+          }
+        },
+        {
+          "id": "gpt-5.3-codex",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 1.75,
+              "output": 14,
+              "cachedInput": 0.17,
+              "cacheWrite": 0,
+              "threshold": 272000
+            }
+          }
+        },
+        {
+          "id": "gpt-5.4",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 2.5,
+              "output": 15,
+              "cachedInput": 0.25,
+              "cacheWrite": 0,
+              "threshold": 272000
+            },
+            "long_context": {
+              "input": 5,
+              "output": 22.5,
+              "cachedInput": 0.5,
+              "cacheWrite": 0,
+              "threshold": 922000
+            }
+          }
+        },
+        {
+          "id": "gpt-5.4-mini",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 0.75,
+              "output": 4.5,
+              "cachedInput": 0.07,
+              "cacheWrite": 0,
+              "threshold": 272000
+            }
+          }
+        },
+        {
+          "id": "gpt-5.6-luna",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 0.2,
+              "output": 1.2,
+              "cachedInput": 0.02,
+              "cacheWrite": 0.25,
+              "threshold": 200000
+            },
+            "long_context": {
+              "input": 0.4,
+              "output": 1.8,
+              "cachedInput": 0.04,
+              "cacheWrite": 0.5,
+              "threshold": 922000
+            }
+          }
+        },
+        {
+          "id": "gpt-5.6-terra",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 2,
+              "output": 12,
+              "cachedInput": 0.2,
+              "cacheWrite": 2.5,
+              "threshold": 272000
+            },
+            "long_context": {
+              "input": 4,
+              "output": 18,
+              "cachedInput": 0.4,
+              "cacheWrite": 5,
+              "threshold": 922000
+            }
+          }
+        },
+        {
+          "id": "mai-code-1-flash-picker",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01",
+          "pricing": {
+            "default": {
+              "input": 0.75,
+              "output": 4.5,
+              "cachedInput": 0.07,
+              "cacheWrite": 0,
+              "threshold": 128000
+            }
+          }
+        },
+        {
+          "id": "text-embedding-3-small",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "text-embedding-3-small-inference",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "text-embedding-ada-002",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        },
+        {
+          "id": "trajectory-compaction",
+          "source": "provider",
+          "observed_at": "2026-08-13T08:35:54.772Z",
+          "api_version": "2026-07-01"
+        }
+      ],
+      "target": "api.githubcopilot.com"
+    },
+    "gemini": {
+      "configured": false,
+      "models": null,
+      "model_metadata": null,
+      "target": null
+    },
+    "vertex": {
+      "configured": false,
+      "models": null,
+      "model_metadata": null,
+      "target": null
+    }
+  },
+  "model_aliases": {
+    "agent": [
+      "sonnet-6x",
+      "gpt-5.4",
+      "gpt-5.5",
+      "gpt-5.6",
+      "gpt-5.3",
+      "gemini-pro",
+      "any"
+    ],
+    "any": [
+      "copilot/*",
+      "anthropic/*",
+      "openai/*",
+      "google/*",
+      "gemini/*"
+    ],
+    "auto": [
+      "copilot/auto",
+      "large"
+    ],
+    "claude": [
+      "agent"
+    ],
+    "codex": [
+      "agent"
+    ],
+    "coding": [
+      "copilot/gpt-5*codex*",
+      "openai/gpt-5*codex*",
+      "gpt-5-codex",
+      "kimi"
+    ],
+    "copilot": [
+      "agent"
+    ],
+    "detection": [
+      "small"
+    ],
+    "evals": [
+      "small"
+    ],
+    "gemini": [
+      "agent"
+    ],
+    "gpt-5": [
+      "copilot/gpt-5*",
+      "openai/gpt-5*"
+    ],
+    "gpt-5-codex": [
+      "copilot/gpt-5*codex*",
+      "openai/gpt-5*codex*"
+    ],
+    "gpt-5-mini": [
+      "copilot/gpt-5*mini*",
+      "openai/gpt-5*mini*"
+    ],
+    "gpt-5.3": [
+      "copilot/gpt-5.3*",
+      "openai/gpt-5.3*"
+    ],
+    "gpt-5.4": [
+      "copilot/gpt-5.4*",
+      "openai/gpt-5.4*"
+    ],
+    "gpt-5.6": [
+      "copilot/gpt-5.6*",
+      "openai/gpt-5.6*"
+    ],
+    "haiku": [
+      "copilot/*haiku*",
+      "anthropic/*haiku*"
+    ],
+    "large": [
+      "sonnet",
+      "gpt-5-pro",
+      "gpt-5",
+      "gemini-pro"
+    ],
+    "mai-code": [
+      "copilot/MAI-Code*",
+      "copilot/mai-code*",
+      "openai/MAI-Code*"
+    ],
+    "mai-code-1-flash-picker": [
+      "copilot/MAI-Code-1-Flash-picker*",
+      "copilot/mai-code-1-flash-picker*",
+      "openai/MAI-Code-1-Flash-picker*"
+    ],
+    "mini": [
+      "haiku",
+      "gpt-5-mini",
+      "gpt-5-nano",
+      "gemini-flash-lite"
+    ],
+    "opus": [
+      "copilot/*opus*",
+      "anthropic/*opus*"
+    ],
+    "small": [
+      "mini"
+    ],
+    "small-agent": [
+      "haiku",
+      "gpt-5-mini",
+      "gemini-flash"
+    ],
+    "sonnet": [
+      "copilot/*sonnet*",
+      "anthropic/*sonnet*"
+    ],
+    "sonnet-6x": [
+      "copilot/*sonnet-4.5*",
+      "copilot/*sonnet-4.6*",
+      "copilot/*sonnet-5*",
+      "copilot/*sonnet-4-5-*",
+      "anthropic/*sonnet-4-5-*",
+      "copilot/*sonnet-4-6*",
+      "anthropic/*sonnet-4-6*",
+      "anthropic/*sonnet-5*"
+    ],
+    "summarization": [
+      "haiku",
+      "gpt-5-mini",
+      "gemini-flash-lite",
+      "mini"
+    ]
+  }
+}

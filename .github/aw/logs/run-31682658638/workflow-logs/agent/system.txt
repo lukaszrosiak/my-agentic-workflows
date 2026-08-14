@@ -1,0 +1,9 @@
+2026-08-13T08:34:51.5610000Z Job is waiting for a hosted runner to come online.
+2026-08-13T08:34:51.5610000Z Job is about to start running on the hosted runner: GitHub Actions 1000000006
+2026-08-13T08:34:51.5550000Z Evaluating agent.if
+2026-08-13T08:34:51.5550000Z Evaluating: (success() && ((needs.activation.outputs.daily_ai_credits_exceeded != 'true')))
+2026-08-13T08:34:51.5550000Z Expanded: (true && ('false' != 'true'))
+2026-08-13T08:34:51.5550000Z Result: true
+2026-08-13T08:34:51.5570000Z Requested labels: ubuntu-latest
+2026-08-13T08:34:51.5570000Z Job defined at: lukaszrosiak/my-agentic-workflows/.github/workflows/daily-report-status.lock.yml@refs/heads/master
+2026-08-13T08:34:51.5570000Z Waiting for a runner to pick up this job...

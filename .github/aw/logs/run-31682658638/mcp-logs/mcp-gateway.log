@@ -1,0 +1,943 @@
+[2026-08-13T08:35:29.662Z] [INFO] [startup] MCPG Gateway version: v0.4.8
+[2026-08-13T08:35:29.664Z] [INFO] [startup] Starting MCPG with config: stdin, listen: 0.0.0.0:8080, log-dir: /tmp/gh-aw/mcp-logs/
+[2026-08-13T08:35:29.664Z] [DEBUG] [cmd:root] Starting MCPG with config: stdin, listen: 0.0.0.0:8080
+[2026-08-13T08:35:29.668Z] [DEBUG] [cmd:root] WASM cache dir resolved from default (logDir="/tmp/gh-aw/mcp-logs/"): "/tmp/gh-aw/wazero-cache"
+[2026-08-13T08:35:29.668Z] [DEBUG] [cmd:root] Configuring WASM compilation cache: resolvedDir="/tmp/gh-aw/wazero-cache", flagChanged=false
+[2026-08-13T08:35:29.669Z] [DEBUG] [guard:wasm] Configuring global compilation cache: dir="/tmp/gh-aw/wazero-cache"
+[2026-08-13T08:35:29.669Z] [DEBUG] [guard:wasm] Creating disk-backed compilation cache: dir=/tmp/gh-aw/wazero-cache
+[2026-08-13T08:35:29.669Z] [DEBUG] [guard:wasm] Global compilation cache replaced successfully
+[2026-08-13T08:35:29.670Z] [DEBUG] [cmd:root] WASM compilation cache configured: mode=disk, dir="/tmp/gh-aw/wazero-cache"
+[2026-08-13T08:35:29.670Z] [INFO] [startup] WASM compilation cache directory: /tmp/gh-aw/wazero-cache
+[2026-08-13T08:35:29.671Z] [DEBUG] [config:config] Loading configuration from stdin JSON
+[2026-08-13T08:35:29.672Z] [DEBUG] [config:config] Read 1368 bytes from stdin
+[2026-08-13T08:35:29.672Z] [DEBUG] [config:config_stdin] Checking 1 server(s) for 'local' type normalization
+[2026-08-13T08:35:29.672Z] [DEBUG] [config:validation_shared] Expanding variables: context=raw JSON data
+[2026-08-13T08:35:29.673Z] [DEBUG] [config:validation_shared] Expanded variable: GITHUB_WORKSPACE (found in environment)
+[2026-08-13T08:35:29.673Z] [DEBUG] [config:validation_shared] Expanded variable: GITHUB_WORKSPACE (found in environment)
+[2026-08-13T08:35:29.674Z] [DEBUG] [config:validation_shared] Expanded variable: GITHUB_WORKSPACE (found in environment)
+[2026-08-13T08:35:29.674Z] [DEBUG] [config:validation_shared] Expanded variable: DEFAULT_BRANCH (found in environment)
+[2026-08-13T08:35:29.674Z] [DEBUG] [config:validation_shared] Expanded variable: GH_AW_ASSETS_ALLOWED_EXTS (found in environment)
+[2026-08-13T08:35:29.675Z] [DEBUG] [config:validation_shared] Expanded variable: GH_AW_ASSETS_BRANCH (found in environment)
+[2026-08-13T08:35:29.675Z] [DEBUG] [config:validation_shared] Expanded variable: GH_AW_ASSETS_MAX_SIZE_KB (found in environment)
+[2026-08-13T08:35:29.676Z] [DEBUG] [config:validation_shared] Expanded variable: GH_AW_MCP_LOG_DIR (found in environment)
+[2026-08-13T08:35:29.676Z] [DEBUG] [config:validation_shared] Expanded variable: GH_AW_SAFE_OUTPUTS (found in environment)
+[2026-08-13T08:35:29.676Z] [DEBUG] [config:validation_shared] Expanded variable: GH_AW_SAFE_OUTPUTS_CONFIG_PATH (found in environment)
+[2026-08-13T08:35:29.677Z] [DEBUG] [config:validation_shared] Expanded variable: GH_AW_SAFE_OUTPUTS_TOOLS_PATH (found in environment)
+[2026-08-13T08:35:29.678Z] [DEBUG] [config:validation_shared] Expanded variable: GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST (found in environment)
+[2026-08-13T08:35:29.678Z] [DEBUG] [config:validation_shared] Expanded variable: GITHUB_REPOSITORY (found in environment)
+[2026-08-13T08:35:29.678Z] [DEBUG] [config:validation_shared] Expanded variable: GITHUB_SHA (found in environment)
+[2026-08-13T08:35:29.679Z] [DEBUG] [config:validation_shared] Expanded variable: GITHUB_TOKEN (found in environment)
+[2026-08-13T08:35:29.679Z] [DEBUG] [config:validation_shared] Expanded variable: GITHUB_WORKSPACE (found in environment)
+[2026-08-13T08:35:29.680Z] [DEBUG] [config:validation_shared] Expanded variable: RUNNER_TEMP (found in environment)
+[2026-08-13T08:35:29.680Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=raw JSON data, undefined_count=0
+[2026-08-13T08:35:29.681Z] [DEBUG] [config:config_stdin] Stripped gateway extension fields for schema validation: 1 servers processed
+[2026-08-13T08:35:29.681Z] [DEBUG] [config:validation_schema] Starting JSON schema validation: data_size=1900 bytes
+[2026-08-13T08:35:29.682Z] [DEBUG] [config:validation_schema] Compiling JSON schema for the first time
+[2026-08-13T08:35:29.687Z] [DEBUG] [config:validation_schema] Schema compiled and cached successfully
+[2026-08-13T08:35:29.687Z] [DEBUG] [config:validation_schema] Schema compilation/retrieval took: 5.576643ms
+[2026-08-13T08:35:29.688Z] [DEBUG] [config:validation_schema] JSON parsing took: 53.629µs
+[2026-08-13T08:35:29.689Z] [DEBUG] [config:validation_schema] Schema validation took: 90.295µs
+[2026-08-13T08:35:29.689Z] [DEBUG] [config:validation_schema] Total validation completed successfully in 7.679369ms
+[2026-08-13T08:35:29.690Z] [DEBUG] [config:config] Parsed stdin config with 1 servers
+[2026-08-13T08:35:29.690Z] [DEBUG] [config:validation_shared] Validating string patterns: server_count=1
+[2026-08-13T08:35:29.691Z] [DEBUG] [config:validation_shared] Validating server: name=safeoutputs, type=stdio
+[2026-08-13T08:35:29.691Z] [DEBUG] [config:validation_shared] Validating gateway configuration
+[2026-08-13T08:35:29.692Z] [DEBUG] [config:validation_shared] Validating gateway port
+[2026-08-13T08:35:29.692Z] [DEBUG] [config:validation_shared] Validating port range: port=8080, jsonPath=gateway.port
+[2026-08-13T08:35:29.693Z] [DEBUG] [config:validation_shared] Validating startup timeout
+[2026-08-13T08:35:29.693Z] [DEBUG] [config:validation_shared] Validating positive timeout: field=startupTimeout, value=120, jsonPath=gateway.startupTimeout
+[2026-08-13T08:35:29.693Z] [DEBUG] [config:validation_shared] Validating payload directory: /tmp/gh-aw/mcp-payloads
+[2026-08-13T08:35:29.694Z] [DEBUG] [config:validation_shared] Validating absolute path: field=payloadDir, value=/tmp/gh-aw/mcp-payloads, jsonPath=gateway.payloadDir
+[2026-08-13T08:35:29.694Z] [DEBUG] [config:validation_shared] Valid Unix absolute path: /tmp/gh-aw/mcp-payloads
+[2026-08-13T08:35:29.694Z] [DEBUG] [config:validation_shared] Gateway config validation passed
+[2026-08-13T08:35:29.695Z] [DEBUG] [config:config_stdin] Converting stdin config: 1 servers
+[2026-08-13T08:35:29.695Z] [DEBUG] [config:config] DEPRECATION: gateway.api_key is deprecated in stdin JSON config; use gateway.agent_id instead
+[2026-08-13T08:35:29.696Z] [DEBUG] [config:config] MCP_GATEWAY_TOOL_TIMEOUT not set in environment
+[2026-08-13T08:35:29.696Z] [DEBUG] [config:config_stdin] Gateway configured: port=8080, toolTimeout=60, startupTimeout=120
+[2026-08-13T08:35:29.696Z] [DEBUG] [config:feature] Applying 2 default setter(s)
+[2026-08-13T08:35:29.697Z] [DEBUG] [config:feature] All default setters applied
+[2026-08-13T08:35:29.697Z] [DEBUG] [config:config] Effective container runtime name: "docker" (config="")
+[2026-08-13T08:35:29.697Z] [DEBUG] [config:config] Effective container runtime command: "docker"
+[2026-08-13T08:35:29.698Z] [DEBUG] [config:validation_shared] Validating server config: name=safeoutputs, type=stdio
+[2026-08-13T08:35:29.698Z] [DEBUG] [config:validation_shared] Validating mounts for server: name=safeoutputs, mount_count=3
+[2026-08-13T08:35:29.699Z] [DEBUG] [config:validation_shared] Validating mount format: mount=/home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw, jsonPath=mcpServers.safeoutputs, index=0
+[2026-08-13T08:35:29.699Z] [DEBUG] [config:validation_shared] Validating mount format: mount=/home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw, jsonPath=mcpServers.safeoutputs, index=1
+[2026-08-13T08:35:29.699Z] [DEBUG] [config:validation_shared] Validating mount format: mount=/tmp/gh-aw:/tmp/gh-aw:rw, jsonPath=mcpServers.safeoutputs, index=2
+[2026-08-13T08:35:29.700Z] [DEBUG] [config:validation_shared] Server config validation passed: name=safeoutputs, type=stdio
+[2026-08-13T08:35:29.700Z] [DEBUG] [config:config_stdin] Server "safeoutputs": expanding 15 environment variable(s)
+[2026-08-13T08:35:29.700Z] [DEBUG] [config:validation_shared] Expanding env variables for server: safeoutputs, count=15
+[2026-08-13T08:35:29.701Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_SAFE_OUTPUTS_CONFIG_PATH
+[2026-08-13T08:35:29.701Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_SAFE_OUTPUTS_CONFIG_PATH, undefined_count=0
+[2026-08-13T08:35:29.702Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GITHUB_REPOSITORY
+[2026-08-13T08:35:29.702Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GITHUB_REPOSITORY, undefined_count=0
+[2026-08-13T08:35:29.703Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GITHUB_WORKSPACE
+[2026-08-13T08:35:29.703Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GITHUB_WORKSPACE, undefined_count=0
+[2026-08-13T08:35:29.703Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_ASSETS_BRANCH
+[2026-08-13T08:35:29.704Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_ASSETS_BRANCH, undefined_count=0
+[2026-08-13T08:35:29.704Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_MCP_LOG_DIR
+[2026-08-13T08:35:29.705Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_MCP_LOG_DIR, undefined_count=0
+[2026-08-13T08:35:29.705Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_SAFE_OUTPUTS_TOOLS_PATH
+[2026-08-13T08:35:29.705Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_SAFE_OUTPUTS_TOOLS_PATH, undefined_count=0
+[2026-08-13T08:35:29.706Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GITHUB_TOKEN
+[2026-08-13T08:35:29.706Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GITHUB_TOKEN, undefined_count=0
+[2026-08-13T08:35:29.706Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.RUNNER_TEMP
+[2026-08-13T08:35:29.707Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.RUNNER_TEMP, undefined_count=0
+[2026-08-13T08:35:29.708Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.DEBUG
+[2026-08-13T08:35:29.708Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.DEBUG, undefined_count=0
+[2026-08-13T08:35:29.708Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_ASSETS_ALLOWED_EXTS
+[2026-08-13T08:35:29.709Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_ASSETS_ALLOWED_EXTS, undefined_count=0
+[2026-08-13T08:35:29.709Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_ASSETS_MAX_SIZE_KB
+[2026-08-13T08:35:29.709Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_ASSETS_MAX_SIZE_KB, undefined_count=0
+[2026-08-13T08:35:29.710Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_SAFE_OUTPUTS
+[2026-08-13T08:35:29.710Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_SAFE_OUTPUTS, undefined_count=0
+[2026-08-13T08:35:29.710Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST
+[2026-08-13T08:35:29.711Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST, undefined_count=0
+[2026-08-13T08:35:29.711Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.GITHUB_SHA
+[2026-08-13T08:35:29.712Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.GITHUB_SHA, undefined_count=0
+[2026-08-13T08:35:29.713Z] [DEBUG] [config:validation_shared] Expanding variables: context=jsonPath=mcpServers.safeoutputs.env.DEFAULT_BRANCH
+[2026-08-13T08:35:29.713Z] [DEBUG] [config:validation_shared] Variable expansion completed: context=jsonPath=mcpServers.safeoutputs.env.DEFAULT_BRANCH, undefined_count=0
+[2026-08-13T08:35:29.713Z] [DEBUG] [config:validation_shared] Env variable expansion completed for server: safeoutputs
+[2026-08-13T08:35:29.714Z] [DEBUG] [config:config_stdin] Converting server "safeoutputs": type=stdio
+[2026-08-13T08:35:29.714Z] [DEBUG] [config:config_stdin] Server "safeoutputs": using custom entrypoint "sh"
+[2026-08-13T08:35:29.716Z] [DEBUG] [config:config_stdin] Server "safeoutputs": added 3 volume mount(s)
+[2026-08-13T08:35:29.720Z] [DEBUG] [config:config_stdin] Server "safeoutputs": adding 2 extra Docker runtime arg(s)
+[2026-08-13T08:35:29.720Z] [DEBUG] [config:config_stdin] Server "safeoutputs": adding 2 entrypoint arg(s)
+[2026-08-13T08:35:29.720Z] [DEBUG] [config:config_stdin] Server "safeoutputs": configured stdio container=ghcr.io/github/gh-aw-node, env_vars=15, mounts=3
+[2026-08-13T08:35:29.721Z] [DEBUG] [config:config] Configured stdio MCP server: name=safeoutputs, container=ghcr.io/github/gh-aw-node
+[2026-08-13T08:35:29.721Z] [DEBUG] [config:feature] Applying 1 stdin converter(s)
+[2026-08-13T08:35:29.722Z] [DEBUG] [config:feature] All stdin converters applied
+[2026-08-13T08:35:29.722Z] [DEBUG] [config:validation_shared] Validating guard policies: count=0
+[2026-08-13T08:35:29.722Z] [DEBUG] [config:config] Converted stdin config to internal format with 1 servers
+[2026-08-13T08:35:29.723Z] [DEBUG] [cmd:root] Configuration loaded with 1 servers
+[2026-08-13T08:35:29.723Z] [DEBUG] [config:config] Effective container runtime name: "docker" (config="")
+[2026-08-13T08:35:29.725Z] [DEBUG] [config:config] Effective container runtime command: "docker"
+[2026-08-13T08:35:29.725Z] [DEBUG] [cmd:root] Validating execution environment with container runtime docker...
+[2026-08-13T08:35:29.725Z] [DEBUG] [config:validation_env] Starting execution environment validation
+[2026-08-13T08:35:29.726Z] [DEBUG] [sys:container] Detecting container environment
+[2026-08-13T08:35:29.726Z] [DEBUG] [sys:container] Container detected via /.dockerenv
+[2026-08-13T08:35:29.727Z] [DEBUG] [sys:container] Scanning 2 cgroup file(s) for container ID
+[2026-08-13T08:35:29.728Z] [DEBUG] [sys:container] No container ID found in cgroup file: path=/proc/1/cgroup
+[2026-08-13T08:35:29.728Z] [DEBUG] [sys:container] No container ID found in cgroup file: path=/proc/self/cgroup
+[2026-08-13T08:35:29.729Z] [DEBUG] [sys:container] No container ID found in any cgroup file
+[2026-08-13T08:35:29.729Z] [DEBUG] [config:validation_env] Containerization check: isContainerized=true, containerID=
+[2026-08-13T08:35:29.729Z] [DEBUG] [sys:docker] Checking Docker socket accessibility: socketPath=/var/run/docker.sock
+[2026-08-13T08:35:29.750Z] [DEBUG] [sys:docker] Docker daemon check: accessible=true
+[2026-08-13T08:35:29.750Z] [DEBUG] [config:validation_env] Validation complete: valid=true, errors=0, warnings=0
+[2026-08-13T08:35:29.751Z] [INFO] [startup] Environment validation passed
+[2026-08-13T08:35:29.752Z] [INFO] [startup] Loaded 1 MCP server(s): [safeoutputs]
+[2026-08-13T08:35:29.752Z] [DEBUG] [cmd:root] Resolving guard policy override: cliChanged=false, cliGuardPolicyChanged=false, allowOnlyPublic=false, owner="", repo="", minIntegrity=""
+[2026-08-13T08:35:29.753Z] [DEBUG] [config:guard_policy] ResolveGuardPolicyOverride: cliChanged=false, hasCLIPolicyJSON=false, allowOnlyPublic=false, owner="", repo="", minIntegrity=""
+[2026-08-13T08:35:29.753Z] [DEBUG] [config:guard_policy] ResolveGuardPolicyOverride: no guard policy configured (nil)
+[2026-08-13T08:35:29.754Z] [DEBUG] [cmd:root] No guard policy override configured
+[2026-08-13T08:35:29.754Z] [DEBUG] [cmd:root] Guard policy resolved: hasOverride=false, source=
+[2026-08-13T08:35:29.754Z] [DEBUG] [difc:sink_server_ids] Setting sink server IDs: input_count=0
+[2026-08-13T08:35:29.755Z] [DEBUG] [difc:sink_server_ids] No sink server IDs provided, clearing configuration
+[2026-08-13T08:35:29.755Z] [INFO] [startup] Guards sink server ID logging enrichment disabled (no sink server IDs configured)
+[2026-08-13T08:35:29.756Z] [DEBUG] [cmd:root] Server mode: routed, guards mode: 
+[2026-08-13T08:35:29.756Z] [DEBUG] [cmd:root] Initializing tracing provider
+[2026-08-13T08:35:29.757Z] [DEBUG] [tracing:provider] resolveServiceName: using default service name: "mcp-gateway"
+[2026-08-13T08:35:29.757Z] [DEBUG] [tracing:provider] Registering global W3C TraceContext+Baggage text map propagator
+[2026-08-13T08:35:29.758Z] [DEBUG] [tracing:provider] Tracing disabled: no OTLP endpoint configured
+[2026-08-13T08:35:29.758Z] [DEBUG] [cmd:root] Tracing provider initialized successfully
+[2026-08-13T08:35:29.758Z] [INFO] [startup] OpenTelemetry tracing disabled (no OTLP endpoint configured)
+[2026-08-13T08:35:29.759Z] [DEBUG] [cmd:root] Creating unified MCP server: mode=routed, servers=1
+[2026-08-13T08:35:29.759Z] [DEBUG] [server:unified] Creating new unified server: sequentialLaunch=false, servers=1
+[2026-08-13T08:35:29.760Z] [DEBUG] [launcher:launcher] Creating new launcher with 1 configured servers
+[2026-08-13T08:35:29.760Z] [DEBUG] [sys:container] Detecting container environment
+[2026-08-13T08:35:29.761Z] [DEBUG] [sys:container] Container detected via /.dockerenv
+[2026-08-13T08:35:29.761Z] [DEBUG] [sys:container] Scanning 2 cgroup file(s) for container ID
+[2026-08-13T08:35:29.761Z] [DEBUG] [sys:container] No container ID found in cgroup file: path=/proc/1/cgroup
+[2026-08-13T08:35:29.762Z] [DEBUG] [sys:container] No container ID found in cgroup file: path=/proc/self/cgroup
+[2026-08-13T08:35:29.762Z] [DEBUG] [sys:container] No container ID found in any cgroup file
+[2026-08-13T08:35:29.763Z] [DEBUG] [launcher:launcher] Container detection: runningInContainer=true
+[2026-08-13T08:35:29.763Z] [DEBUG] [config:config] Resolved gateway config after defaulting: port=8080, startupTimeout=120, toolTimeout=60, keepaliveInterval=1500
+[2026-08-13T08:35:29.764Z] [DEBUG] [config:feature] Applying 2 default setter(s)
+[2026-08-13T08:35:29.764Z] [DEBUG] [config:config_tracing] Applying default tracing service name: mcp-gateway
+[2026-08-13T08:35:29.764Z] [DEBUG] [config:feature] All default setters applied
+[2026-08-13T08:35:29.765Z] [DEBUG] [launcher:launcher] Using startup timeout: 2m0s
+[2026-08-13T08:35:29.766Z] [DEBUG] [launcher:pool] Creating new session connection pool: idleTimeout=6h0m0s, cleanupInterval=5m0s, maxErrors=10
+[2026-08-13T08:35:29.766Z] [DEBUG] [server:unified] Payload configuration: dir=/tmp/gh-aw/mcp-payloads, pathPrefix=, sizeThreshold=524288 bytes (512.00 KB)
+[2026-08-13T08:35:29.767Z] [DEBUG] [difc:agent] Creating agent registry with defaults: secrecyTags=0, integrityTags=0
+[2026-08-13T08:35:29.767Z] [DEBUG] [launcher:pool] Cleanup goroutine started
+[2026-08-13T08:35:29.768Z] [DEBUG] [difc:capabilities] Creating new capabilities set
+[2026-08-13T08:35:29.768Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:35:29.769Z] [DEBUG] [server:system_tools] Creating new SysServer with 1 servers: [safeoutputs]
+[2026-08-13T08:35:29.769Z] [DEBUG] [server:tool_registry_helpers] Built allowed tool sets: 0 server(s) with tool restrictions
+[2026-08-13T08:35:29.769Z] [DEBUG] [server:circuit_breaker] Creating circuit breaker: serverID=safeoutputs, threshold=3, cooldown=1m0s
+[2026-08-13T08:35:29.792Z] [DEBUG] [server:circuit_breaker] Created circuit breaker for server safeoutputs: threshold=0, cooldown=0s
+[2026-08-13T08:35:29.793Z] [DEBUG] [server:circuit_breaker] buildCircuitBreakers: created 1 circuit breakers
+[2026-08-13T08:35:29.794Z] [DEBUG] [guard:registry] Creating new guard registry
+[2026-08-13T08:35:29.795Z] [DEBUG] [server:http_server] Creating SDK server: name=awmg-unified
+[2026-08-13T08:35:29.796Z] [INFO] [difc] MCP_GATEWAY_WASM_GUARDS_DIR=/guards
+[2026-08-13T08:35:29.796Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:35:29.797Z] [INFO] [difc] [safeoutputs] Guard policy: {"write-sink":{"accept":["*"],"sink-visibility":"public"}}
+[2026-08-13T08:35:29.798Z] [DEBUG] [guard:wasm] Searching for WASM guard file: serverID=safeoutputs, dir=/guards/safeoutputs
+[2026-08-13T08:35:29.798Z] [DEBUG] [guard:wasm] No WASM guard directory found for serverID=safeoutputs
+[2026-08-13T08:35:29.799Z] [DEBUG] [server:guard_init] Resolving guard policy: serverID=safeoutputs
+[2026-08-13T08:35:29.799Z] [DEBUG] [config:guard_policy] ParseServerGuardPolicy: serverID=safeoutputs, keyCount=1
+[2026-08-13T08:35:29.799Z] [DEBUG] [config:guard_policy] ParsePolicyMap: hasAllowOnly=false, hasWriteSink=true, keyCount=1
+[2026-08-13T08:35:29.800Z] [DEBUG] [config:guard_policy] Parsing guard policy JSON: len=58
+[2026-08-13T08:35:29.800Z] [DEBUG] [config:guard_policy] UnmarshalJSON: parsing guard policy, keys=1
+[2026-08-13T08:35:29.801Z] [DEBUG] [config:guard_policy] UnmarshalJSON: guard policy type is write-sink
+[2026-08-13T08:35:29.835Z] [DEBUG] [config:guard_policy] ValidateGuardPolicy: delegating to write-sink validation, acceptCount=1, sinkVisibility="public"
+[2026-08-13T08:35:29.836Z] [DEBUG] [config:guard_policy] ValidateWriteSinkPolicy: acceptCount=1, sinkVisibility="public"
+[2026-08-13T08:35:29.836Z] [DEBUG] [config:guard_policy] ValidateWriteSinkPolicy: wildcard accept, policy is valid
+[2026-08-13T08:35:29.837Z] [DEBUG] [server:guard_init] Using server-level guard policy: serverID=safeoutputs
+[2026-08-13T08:35:29.837Z] [DEBUG] [envutil:github] Looking up GitHub token: checking 4 candidate env vars
+[2026-08-13T08:35:29.838Z] [DEBUG] [envutil:github] GitHub token found: source=GITHUB_TOKEN
+[2026-08-13T08:35:29.838Z] [DEBUG] [envutil:github] Looking up GitHub token: checking 4 candidate env vars
+[2026-08-13T08:35:29.838Z] [DEBUG] [envutil:github] GitHub token found: source=GITHUB_TOKEN
+[2026-08-13T08:35:29.839Z] [DEBUG] [envutil:github] GitHub API URL using default: 
+[2026-08-13T08:35:29.839Z] [DEBUG] [envutil:github] Deriving API URL from server URL: https://github.com
+[2026-08-13T08:35:29.840Z] [DEBUG] [envutil:github] GitHub.com detected, using default API URL: https://api.github.com
+[2026-08-13T08:35:29.840Z] [DEBUG] [envutil:github] GitHub API URL derived from GITHUB_SERVER_URL=https://github.com: https://api.github.com
+[2026-08-13T08:35:29.840Z] [DEBUG] [githubhttp:visibility] Fetching repo visibility: nwo=lukaszrosiak/my-agentic-workflows, apiBaseURL=https://api.github.com
+[2026-08-13T08:35:29.841Z] [DEBUG] [githubhttp:client] GitHub GET: baseURL="https://api.github.com", path="/repos/lukaszrosiak/my-agentic-workflows", hasAuth=true
+[2026-08-13T08:35:29.841Z] [DEBUG] [githubhttp:client] Applying GitHub API headers: method="GET", path="/repos/lukaszrosiak/my-agentic-workflows", hasAuth=true
+[2026-08-13T08:35:30.231Z] [DEBUG] [githubhttp:client] GitHub GET response: path="/repos/lukaszrosiak/my-agentic-workflows", status=200
+[2026-08-13T08:35:30.232Z] [DEBUG] [githubhttp:visibility] Repo visibility resolved: nwo=lukaszrosiak/my-agentic-workflows, visibility=public
+[2026-08-13T08:35:30.233Z] [DEBUG] [server:guard_init] resolveWorkflowRepoVisibility: cached repo visibility for lukaszrosiak/my-agentic-workflows: public
+[2026-08-13T08:35:30.234Z] [INFO] [difc] [safeoutputs] Sink visibility runtime verification passed: repo=lukaszrosiak/my-agentic-workflows, configured="public", actual="public"
+[2026-08-13T08:35:30.234Z] [DEBUG] [guard:write-sink] Creating write-sink guard with 1 accept patterns, sink-visibility="public"
+[2026-08-13T08:35:30.235Z] [INFO] [difc] [safeoutputs] Created write-sink guard with 1 accept patterns, sink-visibility="public"
+[2026-08-13T08:35:30.235Z] [DEBUG] [envutil:github] Looking up GitHub token: checking 4 candidate env vars
+[2026-08-13T08:35:30.236Z] [DEBUG] [envutil:github] GitHub token found: source=GITHUB_TOKEN
+[2026-08-13T08:35:30.236Z] [DEBUG] [config:guard_policy] ParseServerGuardPolicy: serverID=safeoutputs, keyCount=1
+[2026-08-13T08:35:30.236Z] [DEBUG] [config:guard_policy] ParsePolicyMap: hasAllowOnly=false, hasWriteSink=true, keyCount=1
+[2026-08-13T08:35:30.237Z] [DEBUG] [config:guard_policy] Parsing guard policy JSON: len=58
+[2026-08-13T08:35:30.237Z] [DEBUG] [config:guard_policy] UnmarshalJSON: parsing guard policy, keys=1
+[2026-08-13T08:35:30.238Z] [DEBUG] [config:guard_policy] UnmarshalJSON: guard policy type is write-sink
+[2026-08-13T08:35:30.238Z] [DEBUG] [config:guard_policy] ValidateGuardPolicy: delegating to write-sink validation, acceptCount=1, sinkVisibility="public"
+[2026-08-13T08:35:30.239Z] [DEBUG] [config:guard_policy] ValidateWriteSinkPolicy: acceptCount=1, sinkVisibility="public"
+[2026-08-13T08:35:30.239Z] [DEBUG] [config:guard_policy] ValidateWriteSinkPolicy: wildcard accept, policy is valid
+[2026-08-13T08:35:30.239Z] [DEBUG] [server:guard_init] overrideToPublicScope: skipping write-sink-only per-server policy for serverID=safeoutputs
+[2026-08-13T08:35:30.240Z] [DEBUG] [server:guard_init] Resolving guard policy: serverID=safeoutputs
+[2026-08-13T08:35:30.240Z] [DEBUG] [config:guard_policy] ParseServerGuardPolicy: serverID=safeoutputs, keyCount=1
+[2026-08-13T08:35:30.241Z] [DEBUG] [config:guard_policy] ParsePolicyMap: hasAllowOnly=false, hasWriteSink=true, keyCount=1
+[2026-08-13T08:35:30.241Z] [DEBUG] [config:guard_policy] Parsing guard policy JSON: len=58
+[2026-08-13T08:35:30.241Z] [DEBUG] [config:guard_policy] UnmarshalJSON: parsing guard policy, keys=1
+[2026-08-13T08:35:30.242Z] [DEBUG] [config:guard_policy] UnmarshalJSON: guard policy type is write-sink
+[2026-08-13T08:35:30.242Z] [DEBUG] [config:guard_policy] ValidateGuardPolicy: delegating to write-sink validation, acceptCount=1, sinkVisibility="public"
+[2026-08-13T08:35:30.242Z] [DEBUG] [config:guard_policy] ValidateWriteSinkPolicy: acceptCount=1, sinkVisibility="public"
+[2026-08-13T08:35:30.243Z] [DEBUG] [config:guard_policy] ValidateWriteSinkPolicy: wildcard accept, policy is valid
+[2026-08-13T08:35:30.243Z] [DEBUG] [server:guard_init] Using server-level guard policy: serverID=safeoutputs
+[2026-08-13T08:35:30.244Z] [DEBUG] [guard:registry] Registering guard for serverID=safeoutputs, guardName=write-sink
+[2026-08-13T08:35:30.244Z] [INFO] [guard] Registered guard 'write-sink' for server 'safeoutputs'
+[2026-08-13T08:35:30.245Z] [INFO] [difc] [safeoutputs] Registered guard 'write-sink'
+[2026-08-13T08:35:30.260Z] [DEBUG] [guard:registry] HasNonNoopGuard: found non-noop guard=write-sink, registeredCount=1
+[2026-08-13T08:35:30.261Z] [DEBUG] [server:unified] Auto-enabled DIFC: non-noop guard, global policy, or per-server guard policies detected
+[2026-08-13T08:35:30.261Z] [INFO] [startup] Guards enforcement enabled with mode: 
+[2026-08-13T08:35:30.262Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:35:30.263Z] [INFO] [backend] Starting tool registration for 1 backends
+[2026-08-13T08:35:30.263Z] [INFO] [backend] DIFC enabled: registering sys tools...
+[2026-08-13T08:35:30.263Z] [DEBUG] [server:unified] registerSysTool: name=sys___init
+[2026-08-13T08:35:30.264Z] [DEBUG] [server:unified] registerSysTool: name=sys___list_servers
+[2026-08-13T08:35:30.264Z] [DEBUG] [server:unified] Registered 2 sys tools
+[2026-08-13T08:35:30.264Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:35:30.265Z] [DEBUG] [server:unified] Registering tools in parallel from 1 backends
+[2026-08-13T08:35:30.265Z] [DEBUG] [server:unified] Registering tools from backend: safeoutputs
+[2026-08-13T08:35:30.289Z] [DEBUG] [backend] [safeoutputs] GetOrLaunch called for server: safeoutputs
+[2026-08-13T08:35:30.290Z] [DEBUG] [launcher:launcher] Server config found: serverID=safeoutputs, type=stdio
+[2026-08-13T08:35:30.290Z] [DEBUG] [launcher:launcher] Connection not found in cache, launching new: serverID=safeoutputs
+[2026-08-13T08:35:30.291Z] [DEBUG] [launcher:launcher] Retrieved server config: serverID=safeoutputs, type=stdio
+[2026-08-13T08:35:30.292Z] [INFO] [backend] [safeoutputs] Launching MCP backend server: server=safeoutputs, command=docker, args=[run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:35:30.292Z] [DEBUG] [launcher:launcher] Launching new server: serverID=safeoutputs, command=docker, inContainer=true, isDirectCommand=false
+[2026-08-13T08:35:30.292Z] [DEBUG] [launcher:launcher] Starting server with timeout: serverID=safeoutputs, sessionID=, timeout=2m0s
+[2026-08-13T08:35:30.293Z] [DEBUG] [launcher:launcher] Starting connection goroutine: serverID=safeoutputs
+[2026-08-13T08:35:30.293Z] [INFO] [backend] Creating new MCP backend connection, command=docker, args=[run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:35:30.294Z] [DEBUG] [envutil:expand] Expanding env args: input_count=52
+[2026-08-13T08:35:30.295Z] [DEBUG] [envutil:expand] Expanding env var: name=GH_AW_ASSETS_BRANCH
+[2026-08-13T08:35:30.295Z] [DEBUG] [envutil:expand] Expanding env var: name=GH_AW_ASSETS_ALLOWED_EXTS
+[2026-08-13T08:35:30.295Z] [DEBUG] [envutil:expand] Env args expansion complete: output_count=52
+[2026-08-13T08:35:30.296Z] [DEBUG] [mcp:connection] Expanded args for Docker env: [run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH= -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS= -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:35:30.296Z] [INFO] [backend] Starting MCP backend server, command=docker, args=[run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH= -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS= -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:35:30.297Z] [DEBUG] [mcp:connection] Initiating MCP server connection and handshake
+[2026-08-13T08:35:30.467Z] [INFO] [backend] [safeoutputs] [stderr] Git configured with standard GitHub Actions identity
+[2026-08-13T08:35:30.508Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.502Z] [mcp_server_core] Module is being loaded
+[2026-08-13T08:35:30.536Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.535Z] [safeoutputs] Loading safe-outputs configuration
+[2026-08-13T08:35:30.538Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.536Z] [safeoutputs] Reading config from file: /home/runner/work/_temp/gh-aw/safeoutputs/config.json
+[2026-08-13T08:35:30.539Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.536Z] [safeoutputs] Config file exists at: /home/runner/work/_temp/gh-aw/safeoutputs/config.json
+[2026-08-13T08:35:30.540Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.536Z] [safeoutputs] Config file content length: 165 characters
+[2026-08-13T08:35:30.544Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.536Z] [safeoutputs] Config file read successfully, attempting to parse JSON
+[2026-08-13T08:35:30.545Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.536Z] [safeoutputs] Successfully parsed config from file with 6 configuration keys
+[2026-08-13T08:35:30.546Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.537Z] [safeoutputs] Final processed config: {"create_issue":{"max":1},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"report_incomplete":{}}
+[2026-08-13T08:35:30.548Z] [INFO] [backend] Successfully connected to MCP backend server, command=docker
+[2026-08-13T08:35:30.548Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.537Z] [safeoutputs] Loading safe-outputs tools
+[2026-08-13T08:35:30.549Z] [INFO] [backend] Started MCP server: docker [run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH= -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS= -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:35:30.549Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.538Z] [safeoutputs] Reading tools from file: /home/runner/work/_temp/gh-aw/safeoutputs/tools.json
+[2026-08-13T08:35:30.549Z] [INFO] [backend] [safeoutputs] Successfully launched MCP backend server: server=safeoutputs
+[2026-08-13T08:35:30.551Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.538Z] [safeoutputs] Tools file exists at: /home/runner/work/_temp/gh-aw/safeoutputs/tools.json
+[2026-08-13T08:35:30.552Z] [DEBUG] [launcher:launcher] Connection established: serverID=safeoutputs
+[2026-08-13T08:35:30.552Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.538Z] [safeoutputs] Tools file content length: 10551 characters
+[2026-08-13T08:35:30.552Z] [DEBUG] [launcher:launcher] Recorded server start: serverID=safeoutputs
+[2026-08-13T08:35:30.553Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.538Z] [safeoutputs] Tools file read successfully, attempting to parse JSON
+[2026-08-13T08:35:30.553Z] [DEBUG] [mcp:connection] ServerInfo: serverID=safeoutputs, name=safeoutputs, version=1.0.0
+[2026-08-13T08:35:30.553Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.538Z] [safeoutputs] Successfully parsed 5 tools from file
+[2026-08-13T08:35:30.554Z] [INFO] [backend] [safeoutputs] Backend server info: name=safeoutputs, version=1.0.0
+[2026-08-13T08:35:30.554Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.541Z] [safeoutputs] Configured git safe.directory for bridge context: /home/runner/work/my-agentic-workflows/my-agentic-workflows
+[2026-08-13T08:35:30.555Z] [DEBUG] [server:tool_registry_helpers] Fetching backend list: serverID=safeoutputs, method=tools/list
+[2026-08-13T08:35:30.555Z] [DEBUG] [mcp:connection_logging] Outbound RPC request: serverID=safeoutputs, method=tools/list, payloadBytes=53
+[2026-08-13T08:35:30.556Z] [DEBUG] [mcp:connection_logging] snapshotTags: no agent tag snapshot attached
+[2026-08-13T08:35:30.556Z] [DEBUG] [rpc] safeoutputs→tools/list 53b {"jsonrpc":"2.0","method":"tools/list","params":null}
+[2026-08-13T08:35:30.557Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.542Z] [safeoutputs]   output file: /home/runner/work/_temp/gh-aw/safeoutputs/outputs.jsonl
+[2026-08-13T08:35:30.557Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.542Z] [safeoutputs]   config: {"create_issue":{"max":1},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"report_incomplete":{}}
+[2026-08-13T08:35:30.558Z] [DEBUG] [mcp:connection] Dispatching SDK method: tools/list, serverID=safeoutputs
+[2026-08-13T08:35:30.558Z] [DEBUG] [mcp:connection] listtools: requesting tools list from backend serverID=safeoutputs
+[2026-08-13T08:35:30.559Z] [DEBUG] [mcp:pagination] PaginateAll: starting pagination, maxPages=100
+[2026-08-13T08:35:30.559Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.542Z] [safeoutputs] Registered tool: create_issue
+[2026-08-13T08:35:30.560Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.542Z] [safeoutputs] Registered tool: missing_tool
+[2026-08-13T08:35:30.561Z] [DEBUG] [mcp:connection] listtools: received page of 6 tools from serverID=safeoutputs
+[2026-08-13T08:35:30.561Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.542Z] [safeoutputs] Registered tool: noop
+[2026-08-13T08:35:30.562Z] [DEBUG] [mcp:pagination] PaginateAll: fetched page=1, items=6, hasNext=false
+[2026-08-13T08:35:30.562Z] [DEBUG] [mcp:pagination] PaginateAll: completed, totalItems=6, pages=1
+[2026-08-13T08:35:30.562Z] [DEBUG] [mcp:connection] listtools: received 6 tools total from serverID=safeoutputs
+[2026-08-13T08:35:30.563Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.542Z] [safeoutputs] Registered tool: missing_data
+[2026-08-13T08:35:30.563Z] [DEBUG] [mcp:helpers] marshalToResponse: result_len=8823 bytes
+[2026-08-13T08:35:30.564Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.542Z] [safeoutputs] Registered tool: report_incomplete
+[2026-08-13T08:35:30.564Z] [DEBUG] [mcp:connection_logging] Inbound RPC response: serverID=safeoutputs, payloadBytes=8857, hasError=false
+[2026-08-13T08:35:30.564Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.543Z] [safeoutputs] Registered tool: create_report_incomplete_issue
+[2026-08-13T08:35:30.566Z] [DEBUG] [mcp:connection_logging] snapshotTags: no agent tag snapshot attached
+[2026-08-13T08:35:30.566Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.543Z] [safeoutputs]   tools: create_issue, missing_tool, noop, missing_data, report_incomplete, create_report_incomplete_issue
+[2026-08-13T08:35:30.567Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.543Z] [safeoutputs] v1.0.0 ready on stdio
+[2026-08-13T08:35:30.568Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.543Z] [safeoutputs]   tools: create_issue, missing_tool, noop, missing_data, report_incomplete, create_report_incomplete_issue
+[2026-08-13T08:35:30.568Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.544Z] [safeoutputs] listening...
+[2026-08-13T08:35:30.569Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.545Z] [safeoutputs] recv: {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"clientInfo":{"name":"awmg","version":"v0.4.8"},"protocolVersion":"2025-11-25","capabilities":{"roots":{"listChanged":true}}}}
+[2026-08-13T08:35:30.569Z] [DEBUG] [rpc] safeoutputs←resp 8857b {"jsonrpc":"2.0","id":1,"result":{"tools":[{"description":"WRITE-ONCE: do NOT call this tool with empty or placeholder arguments to probe or discover its schema — required fields (title, body) are listed in this schema; if you are not ready to open the real issue, call `noop` instead. Creates a new GitHub issue for tracking bugs, feature requests, or tasks. Use this for actionable work items that need assignment, labeling, and status tracking. For reports, announcements, or status updates that don't require task tracking, use create_discussion instead. Compatibility: labels may be passed as either an array of strings or a comma-separated string; string input is split, trimmed, and normalized to an array. CONSTRAINTS: Maximum 1 issue(s) can be created. This tool records a real issue intent. Do not use it for placeholder titles/bodies, auth checks, or probing. Call it only when the final issue title/body are ready; otherwise use noop or report_incomplete.","inputSchema":{"$defs":{"structured_data":{"additionalProperties":true,"description":"Optional structured data to carry machine-readable context through sanitization-safe channels. When provided, this object is preserved and appended to the body as fenced JSON.","type":"object"}},"additionalProperties":false,"properties":{"body":{"description":"Detailed issue description in Markdown. Must be the final intended body — not a placeholder or test value. Do NOT repeat the title as a heading since it already appears as the issue's h1. Include context, reproduction steps, or acceptance criteria as appropriate.","maxLength":65536,"minLength":20,"type":"string"},"fields":{"description":"Optional issue fields to set after creating the issue (e.g., Priority, Iteration, Start Date).","items":{"additionalProperties":false,"properties":{"name":{"description":"Issue field name exactly as configured in the repository (e.g., \"Priority\", \"Iteration\").","type":"string"},"value":{"description":"Field value. Use string for text, single-select, iteration, and date (YYYY-MM-DD) fields; use number for numeric fields.","type":["string","number"]}},"required":["name","value"],"type":"object"},"type":"array"},"integrity":{"description":"Trustworthiness level of the message source (e.g., \"low\", \"medium\", \"high\").","type":"string"},"labels":{"description":"Labels to categorize the issue (e.g., 'bug', 'enhancement'). Labels must exist in the repository. Accepts either an array of strings or a comma-separated string; string input is split on commas, trimmed, and normalized to an array.","items":{"type":"string"},"type":["array","string"]},"parent":{"description":"Parent issue number for creating sub-issues. This is the numeric ID from the GitHub URL (e.g., 42 in github.com/owner/repo/issues/42). Can also be a temporary_id from a previously created issue in the same workflow run — use the '#aw_abc123' form (e.g., '#aw_Test123'); the bare 'aw_abc123' form is also accepted and normalised to '#aw_abc123'.","type":["number","string"]},"secrecy":{"description":"Confidentiality level of the message content (e.g., \"public\", \"internal\", \"private\").","type":"string"},"temporary_id":{"description":"Unique temporary identifier for this issue. Canonical form: '#aw_' followed by 3 to 12 alphanumeric or underscore characters (A-Za-z0-9_) — e.g., '#aw_abc1', '#aw_pr_fix'. The bare 'aw_abc1' form is also accepted and normalised to '#aw_abc1'. Use this same '#aw_ID' form in body text to cross-reference the issue; these references are replaced with the real issue number after creation.","pattern":"^#?aw_[A-Za-z0-9_]{3,12}$","type":"string"},"title":{"description":"Concise issue title summarizing the bug, feature, or task. Must be the final intended title — not a placeholder or test value. The title appears as the main heading, so keep it brief and descriptive.","type":"string"}},"required":["title","body"],"type":"object"},"name":"create_issue"},{"description":"Report that a tool or capability needed to complete the task is not available, or share any information you deem important about missing functionality or limitations. Use this when you cannot accomplish what was requested because the required functionality is missing or access is restricted. When a bash command is blocked by security policy, call this tool with reason set to \"security\".","inputSchema":{"additionalProperties":false,"properties":{"alternatives":{"description":"Any workarounds, manual steps, or alternative approaches the user could take (max 256 characters).","type":"string"},"integrity":{"description":"Trustworthiness level of the message source (e.g., \"low\", \"medium\", \"high\").","type":"string"},"reason":{"description":"Explanation of why this tool is needed or what information you want to share about the limitation (max 256 characters).","type":"string"},"secrecy":{"description":"Confidentiality level of the message content (e.g., \"public\", \"internal\", \"private\").","type":"string"},"tool":{"description":"Optional: Name or description of the missing tool or capability (max 128 characters). Be specific about what functionality is needed.","type":"string"}},"required":["reason"],"type":"object"},"name":"missing_tool"},{"description":"Log a transparency message when no significant actions are needed. Use this to confirm workflow completion and provide visibility when analysis is complete but no changes or outputs are required (e.g., 'No issues found', 'All checks passed'). This ensures the workflow produces human-visible output even when no other actions are taken.","inputSchema":{"additionalProperties":false,"properties":{"integrity":{"description":"Trustworthiness level of the message source (e.g., \"low\", \"medium\", \"high\").","type":"string"},"message":{"description":"Status or completion message to log. Should explain what was analyzed and the outcome (e.g., 'Code review complete - no issues found', 'Analysis complete - all tests passing'). This is the only content field noop accepts. Serialize any metrics or structured run summary into this single string; additional named fields (for example processed, skipped) are not accepted and cause a missing-message error.","maxLength":65536,"type":"string"},"secrecy":{"description":"Confidentiality level of the message content (e.g., \"public\", \"internal\", \"private\").","type":"string"}},"required":["message"],"type":"object"},"name":"noop"},{"description":"Report that data or information needed to complete the task is not available. Use this when you cannot accomplish what was requested because required data, context, or information is missing.","inputSchema":{"additionalProperties":false,"properties":{"alternatives":{"description":"Any workarounds, manual steps, or alternative approaches the user could take (max 256 characters).","type":"string"},"context":{"description":"Additional context about the missing data or where it should come from (max 256 characters).","type":"string"},"data_type":{"description":"Type or description of the missing data or information (max 128 characters). Be specific about what data is needed.","type":"string"},"integrity":{"description":"Trustworthiness level of the message source (e.g., \"low\", \"medium\", \"high\").","type":"string"},"reason":{"description":"Explanation of why this data is needed to complete the task (max 256 characters).","type":"string"},"secrecy":{"description":"Confidentiality level of the message content (e.g., \"public\", \"internal\", \"private\").","type":"string"}},"required":[],"type":"object"},"name":"missing_data"},{"description":"Signal that the task could not be completed due to an infrastructure or tool failure (e.g., MCP server crash, missing authentication, inaccessible repository). Use this when required tools or data are unavailable and the task cannot be meaningfully performed. This is distinct from noop (no action needed) — it indicates an active failure that prevented the task from running. Provide a specific reason and optional details so downstream issue aggregation can preserve complete incomplete-signal context. The workflow framework will treat this as a failure signal even when the agent exits successfully.","inputSchema":{"additionalProperties":false,"properties":{"details":{"description":"Optional extended details or diagnostic context about the failure (max 65000 characters).","maxLength":65536,"type":"string"},"reason":{"description":"A concise explanation of why the task could not be completed (max 1024 characters). Be specific about which tools or resources were unavailable.","type":"string"}},"required":["reason"],"type":"object"},"name":"report_incomplete"},{"description":"Custom safe-job: create_report_incomplete_issue","inputSchema":{"additionalProperties":true,"properties":{},"type":"object"},"name":"create_report_incomplete_issue"}]}}
+[2026-08-13T08:35:30.571Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.545Z] [safeoutputs] client info: {"name":"awmg","version":"v0.4.8"}
+[2026-08-13T08:35:30.573Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.546Z] [safeoutputs] send: {"jsonrpc":"2.0","id":1,"result":{"serverInfo":{"name":"safeoutputs","version":"1.0.0"},"protocolVersion":"2025-11-25","capabilities":{"tools":{}}}}
+[2026-08-13T08:35:30.573Z] [DEBUG] [mcp:schema] Normalizing input schema for tool: safeoutputs___create_issue
+[2026-08-13T08:35:30.574Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.547Z] [safeoutputs] recv: {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
+[2026-08-13T08:35:30.574Z] [DEBUG] [mcp:schema] Tool safeoutputs___create_issue schema analysis: hasType=true
+[2026-08-13T08:35:30.575Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.547Z] [safeoutputs] ignore notifications/initialized
+[2026-08-13T08:35:30.575Z] [DEBUG] [mcp:schema] Tool safeoutputs___create_issue object type schema: hasProperties=true, hasAdditionalProperties=true
+[2026-08-13T08:35:30.576Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.559Z] [safeoutputs] recv: {"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
+[2026-08-13T08:35:30.576Z] [DEBUG] [mcp:schema] Tool safeoutputs___create_issue schema is valid, no normalization needed
+[2026-08-13T08:35:30.576Z] [DEBUG] [middleware:jqschema] ShouldApplyMiddleware: tool=safeoutputs___create_issue, applies=true
+[2026-08-13T08:35:30.577Z] [DEBUG] [middleware:jqschema] WrapToolHandler: wrapping tool=safeoutputs___create_issue, sizeThreshold=524288 bytes, baseDir=/tmp/gh-aw/mcp-payloads, pathPrefixSet=false
+[2026-08-13T08:35:30.577Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: safeoutputs___create_issue
+[2026-08-13T08:35:30.578Z] [DEBUG] [server:unified] Registered tool: safeoutputs-create_issue
+[2026-08-13T08:35:30.578Z] [DEBUG] [mcp:schema] Normalizing input schema for tool: safeoutputs___missing_tool
+[2026-08-13T08:35:30.578Z] [DEBUG] [mcp:schema] Tool safeoutputs___missing_tool schema analysis: hasType=true
+[2026-08-13T08:35:30.579Z] [DEBUG] [mcp:schema] Tool safeoutputs___missing_tool object type schema: hasProperties=true, hasAdditionalProperties=true
+[2026-08-13T08:35:30.579Z] [DEBUG] [mcp:schema] Tool safeoutputs___missing_tool schema is valid, no normalization needed
+[2026-08-13T08:35:30.580Z] [DEBUG] [middleware:jqschema] ShouldApplyMiddleware: tool=safeoutputs___missing_tool, applies=true
+[2026-08-13T08:35:30.581Z] [DEBUG] [middleware:jqschema] WrapToolHandler: wrapping tool=safeoutputs___missing_tool, sizeThreshold=524288 bytes, baseDir=/tmp/gh-aw/mcp-payloads, pathPrefixSet=false
+[2026-08-13T08:35:30.582Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: safeoutputs___missing_tool
+[2026-08-13T08:35:30.582Z] [DEBUG] [server:unified] Registered tool: safeoutputs-missing_tool
+[2026-08-13T08:35:30.582Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:35:30.560Z] [safeoutputs] send: {"jsonrpc":"2.0","id":2,"result":{"tools":[{"name":"create_issue","description":"WRITE-ONCE: do NOT call this tool with empty or placeholder arguments to probe or discover its schema — required fields (title, body) are listed in this schema; if you are not ready to open the real issue, call `noop` instead. Creates a new GitHub issue for tracking bugs, feature requests, or tasks. Use this for actionable work items that need assignment, labeling, and status tracking. For reports, announcements, or status updates that don't require task tracking, use create_discussion instead. Compatibility: labels may be passed as either an array of strings or a comma-separated string; string input is split, trimmed, and normalized to an array. CONSTRAINTS: Maximum 1 issue(s) can be created. This tool records a real issue intent. Do not use it for placeholder titles/bodies, auth checks, or probing. Call it only when the final issue title/body are ready; otherwise use noop or report_incomplete.","inputSchema":{"type":"object","required":["title","body"],"$defs":{"structured_data":{"type":"object","description":"Optional structured data to carry machine-readable context through sanitization-safe channels. When provided, this object is preserved and appended to the body as fenced JSON.","additionalProperties":true}},"properties":{"title":{"type":"string","description":"Concise issue title summarizing the bug, feature, or task. Must be the final intended title — not a placeholder or test value. The title appears as the main heading, so keep it brief and descriptive."},"body":{"type":"string","minLength":20,"maxLength":65536,"description":"Detailed issue description in Markdown. Must be the final intended body — not a placeholder or test value. Do NOT repeat the title as a heading since it already appears as the issue's h1. Include context, reproduction steps, or acceptance criteria as appropriate."},"labels":{"type":["array","string"],"items":{"type":"string"},"description":"Labels to categorize the issue (e.g., 'bug', 'enhancement'). Labels must exist in the repository. Accepts either an array of strings or a comma-separated string; string input is split on commas, trimmed, and normalized to an array."},"fields":{"type":"array","description":"Optional issue fields to set after creating the issue (e.g., Priority, Iteration, Start Date).","items":{"type":"object","required":["name","value"],"properties":{"name":{"type":"string","description":"Issue field name exactly as configured in the repository (e.g., \"Priority\", \"Iteration\")."},"value":{"type":["string","number"],"description":"Field value. Use string for text, single-select, iteration, and date (YYYY-MM-DD) fields; use number for numeric fields."}},"additionalProperties":false}},"parent":{"type":["number","string"],"description":"Parent issue number for creating sub-issues. This is the numeric ID from the GitHub URL (e.g., 42 in github.com/owner/repo/issues/42). Can also be a temporary_id from a previously created issue in the same workflow run — use the '#aw_abc123' form (e.g., '#aw_Test123'); the bare 'aw_abc123' form is also accepted and normalised to '#aw_abc123'."},"temporary_id":{"type":"string","pattern":"^#?aw_[A-Za-z0-9_]{3,12}$","description":"Unique temporary identifier for this issue. Canonical form: '#aw_' followed by 3 to 12 alphanumeric or underscore characters (A-Za-z0-9_) — e.g., '#aw_abc1', '#aw_pr_fix'. The bare 'aw_abc1' form is also accepted and normalised to '#aw_abc1'. Use this same '#aw_ID' form in body text to cross-reference the issue; these references are replaced with the real issue number after creation."},"secrecy":{"type":"string","description":"Confidentiality level of the message content (e.g., \"public\", \"internal\", \"private\")."},"integrity":{"type":"string","description":"Trustworthiness level of the message source (e.g., \"low\", \"medium\", \"high\")."}},"additionalProperties":false}},{"name":"missing_tool","description":"Report that a tool or capability needed to complete the task is not available, or share any information you deem important about missing functionality or limitations. Use this when you cannot accomplish what was requested because the required functionality is missing or access is restricted. When a bash command is blocked by security policy, call this tool with reason set to \"security\".","inputSchema":{"type":"object","required":["reason"],"properties":{"tool":{"type":"string","description":"Optional: Name or description of the missing tool or capability (max 128 characters). Be specific about what functionality is needed."},"reason":{"type":"string","description":"Explanation of why this tool is needed or what information you want to share about the limitation (max 256 characters)."},"alternatives":{"type":"string","description":"Any workarounds, manual steps, or alternative approaches the user could take (max 256 characters)."},"secrecy":{"type":"string","description":"Confidentiality level of the message content (e.g., \"public\", \"internal\", \"private\")."},"integrity":{"type":"string","description":"Trustworthiness level of the message source (e.g., \"low\", \"medium\", \"high\")."}},"additionalProperties":false}},{"name":"noop","description":"Log a transparency message when no significant actions are needed. Use this to confirm workflow completion and provide visibility when analysis is complete but no changes or outputs are required (e.g., 'No issues found', 'All checks passed'). This ensures the workflow produces human-visible output even when no other actions are taken.","inputSchema":{"type":"object","required":["message"],"properties":{"message":{"type":"string","description":"Status or completion message to log. Should explain what was analyzed and the outcome (e.g., 'Code review complete - no issues found', 'Analysis complete - all tests passing'). This is the only content field noop accepts. Serialize any metrics or structured run summary into this single string; additional named fields (for example processed, skipped) are not accepted and cause a missing-message error.","maxLength":65536},"secrecy":{"type":"string","description":"Confidentiality level of the message content (e.g., \"public\", \"internal\", \"private\")."},"integrity":{"type":"string","description":"Trustworthiness level of the message source (e.g., \"low\", \"medium\", \"high\")."}},"additionalProperties":false}},{"name":"missing_data","description":"Report that data or information needed to complete the task is not available. Use this when you cannot accomplish what was requested because required data, context, or information is missing.","inputSchema":{"type":"object","required":[],"properties":{"data_type":{"type":"string","description":"Type or description of the missing data or information (max 128 characters). Be specific about what data is needed."},"reason":{"type":"string","description":"Explanation of why this data is needed to complete the task (max 256 characters)."},"context":{"type":"string","description":"Additional context about the missing data or where it should come from (max 256 characters)."},"alternatives":{"type":"string","description":"Any workarounds, manual steps, or alternative approaches the user could take (max 256 characters)."},"secrecy":{"type":"string","description":"Confidentiality level of the message content (e.g., \"public\", \"internal\", \"private\")."},"integrity":{"type":"string","description":"Trustworthiness level of the message source (e.g., \"low\", \"medium\", \"high\")."}},"additionalProperties":false}},{"name":"report_incomplete","description":"Signal that the task could not be completed due to an infrastructure or tool failure (e.g., MCP server crash, missing authentication, inaccessible repository). Use this when required tools or data are unavailable and the task cannot be meaningfully performed. This is distinct from noop (no action needed) — it indicates an active failure that prevented the task from running. Provide a specific reason and optional details so downstream issue aggregation can preserve complete incomplete-signal context. The workflow framework will treat this as a failure signal even when the agent exits successfully.","inputSchema":{"type":"object","required":["reason"],"properties":{"reason":{"type":"string","description":"A concise explanation of why the task could not be completed (max 1024 characters). Be specific about which tools or resources were unavailable."},"details":{"type":"string","description":"Optional extended details or diagnostic context about the failure (max 65000 characters).","maxLength":65536}},"additionalProperties":false}},{"name":"create_report_incomplete_issue","description":"Custom safe-job: create_report_incomplete_issue","inputSchema":{"type":"object","properties":{},"additionalProperties":true}}]}}
+[2026-08-13T08:35:30.583Z] [DEBUG] [mcp:schema] Normalizing input schema for tool: safeoutputs___noop
+[2026-08-13T08:35:30.583Z] [DEBUG] [mcp:schema] Tool safeoutputs___noop schema analysis: hasType=true
+[2026-08-13T08:35:30.584Z] [DEBUG] [mcp:schema] Tool safeoutputs___noop object type schema: hasProperties=true, hasAdditionalProperties=true
+[2026-08-13T08:35:30.584Z] [DEBUG] [mcp:schema] Tool safeoutputs___noop schema is valid, no normalization needed
+[2026-08-13T08:35:30.584Z] [DEBUG] [middleware:jqschema] ShouldApplyMiddleware: tool=safeoutputs___noop, applies=true
+[2026-08-13T08:35:30.585Z] [DEBUG] [middleware:jqschema] WrapToolHandler: wrapping tool=safeoutputs___noop, sizeThreshold=524288 bytes, baseDir=/tmp/gh-aw/mcp-payloads, pathPrefixSet=false
+[2026-08-13T08:35:30.585Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: safeoutputs___noop
+[2026-08-13T08:35:30.586Z] [DEBUG] [server:unified] Registered tool: safeoutputs-noop
+[2026-08-13T08:35:30.586Z] [DEBUG] [mcp:schema] Normalizing input schema for tool: safeoutputs___missing_data
+[2026-08-13T08:35:30.586Z] [DEBUG] [mcp:schema] Tool safeoutputs___missing_data schema analysis: hasType=true
+[2026-08-13T08:35:30.587Z] [DEBUG] [mcp:schema] Tool safeoutputs___missing_data object type schema: hasProperties=true, hasAdditionalProperties=true
+[2026-08-13T08:35:30.587Z] [DEBUG] [mcp:schema] Tool safeoutputs___missing_data schema is valid, no normalization needed
+[2026-08-13T08:35:30.587Z] [DEBUG] [middleware:jqschema] ShouldApplyMiddleware: tool=safeoutputs___missing_data, applies=true
+[2026-08-13T08:35:30.588Z] [DEBUG] [middleware:jqschema] WrapToolHandler: wrapping tool=safeoutputs___missing_data, sizeThreshold=524288 bytes, baseDir=/tmp/gh-aw/mcp-payloads, pathPrefixSet=false
+[2026-08-13T08:35:30.588Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: safeoutputs___missing_data
+[2026-08-13T08:35:30.589Z] [DEBUG] [server:unified] Registered tool: safeoutputs-missing_data
+[2026-08-13T08:35:30.589Z] [DEBUG] [mcp:schema] Normalizing input schema for tool: safeoutputs___report_incomplete
+[2026-08-13T08:35:30.590Z] [DEBUG] [mcp:schema] Tool safeoutputs___report_incomplete schema analysis: hasType=true
+[2026-08-13T08:35:30.590Z] [DEBUG] [mcp:schema] Tool safeoutputs___report_incomplete object type schema: hasProperties=true, hasAdditionalProperties=true
+[2026-08-13T08:35:30.591Z] [DEBUG] [mcp:schema] Tool safeoutputs___report_incomplete schema is valid, no normalization needed
+[2026-08-13T08:35:30.591Z] [DEBUG] [middleware:jqschema] ShouldApplyMiddleware: tool=safeoutputs___report_incomplete, applies=true
+[2026-08-13T08:35:30.592Z] [DEBUG] [middleware:jqschema] WrapToolHandler: wrapping tool=safeoutputs___report_incomplete, sizeThreshold=524288 bytes, baseDir=/tmp/gh-aw/mcp-payloads, pathPrefixSet=false
+[2026-08-13T08:35:30.593Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: safeoutputs___report_incomplete
+[2026-08-13T08:35:30.594Z] [DEBUG] [server:unified] Registered tool: safeoutputs-report_incomplete
+[2026-08-13T08:35:30.594Z] [DEBUG] [mcp:schema] Normalizing input schema for tool: safeoutputs___create_report_incomplete_issue
+[2026-08-13T08:35:30.595Z] [DEBUG] [mcp:schema] Tool safeoutputs___create_report_incomplete_issue schema analysis: hasType=true
+[2026-08-13T08:35:30.595Z] [DEBUG] [mcp:schema] Tool safeoutputs___create_report_incomplete_issue object type schema: hasProperties=true, hasAdditionalProperties=true
+[2026-08-13T08:35:30.596Z] [DEBUG] [mcp:schema] Tool safeoutputs___create_report_incomplete_issue schema is valid, no normalization needed
+[2026-08-13T08:35:30.596Z] [DEBUG] [middleware:jqschema] ShouldApplyMiddleware: tool=safeoutputs___create_report_incomplete_issue, applies=true
+[2026-08-13T08:35:30.596Z] [DEBUG] [middleware:jqschema] WrapToolHandler: wrapping tool=safeoutputs___create_report_incomplete_issue, sizeThreshold=524288 bytes, baseDir=/tmp/gh-aw/mcp-payloads, pathPrefixSet=false
+[2026-08-13T08:35:30.597Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: safeoutputs___create_report_incomplete_issue
+[2026-08-13T08:35:30.597Z] [DEBUG] [server:unified] Registered tool: safeoutputs-create_report_incomplete_issue
+[2026-08-13T08:35:30.598Z] [DEBUG] [server:unified] Registered 6 tools from safeoutputs: safeoutputs-create_issue, safeoutputs-missing_tool, safeoutputs-noop, safeoutputs-missing_data, safeoutputs-report_incomplete, safeoutputs-create_report_incomplete_issue
+[2026-08-13T08:35:30.598Z] [DEBUG] [mcp:connection] BackendHasPromptsCapability: serverID=safeoutputs, hasPrompts=false
+[2026-08-13T08:35:30.599Z] [DEBUG] [server:unified] Backend safeoutputs does not declare prompts capability (skipping)
+[2026-08-13T08:35:30.599Z] [DEBUG] [server:unified] Successfully registered tools from safeoutputs (took 333.747061ms)
+[2026-08-13T08:35:30.600Z] [INFO] [backend] [safeoutputs] Successfully registered tools from safeoutputs (took 333.747061ms)
+[2026-08-13T08:35:30.600Z] [DEBUG] [server:tool_registry_helpers] Tool registration complete: all 1 backend(s) registered successfully
+[2026-08-13T08:35:30.601Z] [INFO] [backend] Tool registration complete: 1 succeeded, 0 failed, total tools=8
+[2026-08-13T08:35:30.601Z] [DEBUG] [launcher:health] Creating health monitor: interval=30s, maxRestartFailures=3
+[2026-08-13T08:35:30.601Z] [DEBUG] [launcher:health] Starting health monitor: interval=30s
+[2026-08-13T08:35:30.604Z] [INFO] [startup] Health monitor started (interval=30s)
+[2026-08-13T08:35:30.605Z] [DEBUG] [server:unified] Unified server created successfully with 8 tools
+[2026-08-13T08:35:30.605Z] [DEBUG] [cmd:root] Unified MCP server created successfully
+[2026-08-13T08:35:30.606Z] [INFO] [startup] Starting MCPG in ROUTED mode on 0.0.0.0:8080
+[2026-08-13T08:35:30.606Z] [DEBUG] [launcher:health] Health monitor goroutine started: interval=30s
+[2026-08-13T08:35:30.607Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:35:30.607Z] [INFO] [startup] Routes: /mcp/<server> where <server> is one of: [safeoutputs]
+[2026-08-13T08:35:30.608Z] [DEBUG] [server:routed] Creating HTTP server for routed mode: addr=0.0.0.0:8080
+[2026-08-13T08:35:30.608Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:35:30.609Z] [DEBUG] [server:routed] Registering routes for 1 backends: [safeoutputs]
+[2026-08-13T08:35:30.609Z] [DEBUG] [server:http_server] Building MCP HTTP server: addr=0.0.0.0:8080, auth_enabled=true, hmac_enabled=false
+[2026-08-13T08:35:30.610Z] [DEBUG] [server:handlers] Registering common endpoints: close_auth_enabled=true
+[2026-08-13T08:35:30.610Z] [DEBUG] [server:handlers] Creating OAuth discovery handler
+[2026-08-13T08:35:30.611Z] [DEBUG] [server:handlers] Creating OAuth discovery handler
+[2026-08-13T08:35:30.611Z] [DEBUG] [server:handlers] Creating reflect handler
+[2026-08-13T08:35:30.612Z] [DEBUG] [server:handlers] Creating close handler
+[2026-08-13T08:35:30.612Z] [DEBUG] [server:handlers] Wrapping /close endpoint with API key auth
+[2026-08-13T08:35:30.612Z] [DEBUG] [server:auth] Auth key configured, applying middleware
+[2026-08-13T08:35:30.613Z] [DEBUG] [server:auth] Initialized auth middleware
+[2026-08-13T08:35:30.613Z] [DEBUG] [server:handlers] Registered common endpoints: oauth discovery, health, reflect, close
+[2026-08-13T08:35:30.614Z] [DEBUG] [server:http_server] Session timeout configured: 6h0m0s
+[2026-08-13T08:35:30.614Z] [DEBUG] [server:routed] [CACHE] Creating filtered server cache: ttl=6h0m0s, maxSize=1000
+[2026-08-13T08:35:30.615Z] [DEBUG] [server:helpers] Wrapping handler with middleware: logTag=routed:safeoutputs, authEnabled=true, hmacEnabled=false
+[2026-08-13T08:35:30.615Z] [DEBUG] [server:hmac] No HMAC secret configured, skipping middleware
+[2026-08-13T08:35:30.616Z] [DEBUG] [server:auth] Auth key configured, applying middleware
+[2026-08-13T08:35:30.616Z] [DEBUG] [server:auth] Initialized auth middleware
+[2026-08-13T08:35:30.617Z] [DEBUG] [tracing:provider] Registering HTTP handler with OTel span: span=gateway.request, extraAttrs=1
+[2026-08-13T08:35:30.617Z] [DEBUG] [server:helpers] Middleware wrapping complete: logTag=routed:safeoutputs
+[2026-08-13T08:35:30.618Z] [DEBUG] [server:routed] Registered route: /mcp/safeoutputs
+[2026-08-13T08:35:30.618Z] [DEBUG] [server:http_server] MCP HTTP server scaffold ready: addr=0.0.0.0:8080
+[2026-08-13T08:35:30.618Z] [DEBUG] [server:http_server] Creating HTTP server: addr=0.0.0.0:8080
+[2026-08-13T08:35:30.619Z] [DEBUG] [cmd:root] TLS configuration: hasCert=false, hasKey=false, hasCA=false
+[2026-08-13T08:35:30.619Z] [DEBUG] [cmd:root] TCP listener created on 0.0.0.0:8080
+[2026-08-13T08:35:30.620Z] [INFO] [startup] TLS not configured — listening on http://0.0.0.0:8080 (set --tls-cert/--tls-key to enable)
+[2026-08-13T08:35:30.621Z] [DEBUG] [cmd:root] Writing gateway config: listenAddr=0.0.0.0:8080, mode=routed, serverCount=1
+[2026-08-13T08:35:30.629Z] [DEBUG] [cmd:root] Parsed listen address: host=0.0.0.0, port=8080
+[2026-08-13T08:35:30.629Z] [DEBUG] [cmd:root] Resolved gateway address: host=0.0.0.0, port=8080
+[2026-08-13T08:35:30.630Z] [DEBUG] [cmd:root] Gateway config: auth_enabled=true
+[2026-08-13T08:35:30.630Z] [DEBUG] [cmd:root] Gateway auth: agentIDConfigured=true
+[2026-08-13T08:35:30.631Z] [DEBUG] [cmd:root] Writing server config: name=safeoutputs, url=http://127.0.0.1:8080/mcp/safeoutputs, toolCount=0
+[2026-08-13T08:35:30.631Z] [DEBUG] [cmd:root] Wrote server config entry: name=safeoutputs, url=http://127.0.0.1:8080/mcp/safeoutputs, toolCount=0
+[2026-08-13T08:35:30.632Z] [DEBUG] [cmd:root] Gateway config written successfully: serverCount=1
+[2026-08-13T08:35:30.632Z] [DEBUG] [cmd:root] Starting HTTP server: addr=0.0.0.0:8080, shutdownTimeout=5s
+[2026-08-13T08:35:34.326Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:34.326Z] [DEBUG] [server:health] Health check request: method=GET, remote=172.17.0.1:50656
+[2026-08-13T08:35:34.327Z] [DEBUG] [server:health] Building health response
+[2026-08-13T08:35:34.327Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:35:34.328Z] [DEBUG] [server:unified] GetServerStatus: querying status for 1 servers
+[2026-08-13T08:35:34.328Z] [DEBUG] [launcher:launcher] GetServerState: serverID=safeoutputs
+[2026-08-13T08:35:34.329Z] [DEBUG] [launcher:launcher] Server state: serverID=safeoutputs, status=running, startedAt=2026-08-13 08:35:30.552409625 +0000 UTC m=+0.899075285
+[2026-08-13T08:35:34.329Z] [DEBUG] [server:unified] GetServerStatus: serverID=safeoutputs, status=running, uptime=3s
+[2026-08-13T08:35:34.329Z] [DEBUG] [server:health] Retrieved status for 1 servers
+[2026-08-13T08:35:34.330Z] [DEBUG] [server:health] Overall health status determined: healthy
+[2026-08-13T08:35:34.330Z] [DEBUG] [server:health] Health response: status=healthy, servers=1
+[2026-08-13T08:35:34.331Z] [DEBUG] [httputil:httputil] Writing JSON response: statusCode=200
+[2026-08-13T08:35:34.331Z] [DEBUG] [server:response_writer] Setting response status code: 200
+[2026-08-13T08:35:34.331Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=200
+[2026-08-13T08:35:34.332Z] [DEBUG] [httputil:httputil] JSON response body size: 127 bytes
+[2026-08-13T08:35:34.332Z] [DEBUG] [server:response_writer] Writing response body: 127 bytes
+[2026-08-13T08:35:34.333Z] [DEBUG] [server:response_writer] Retrieving captured body: 127 bytes
+[2026-08-13T08:35:34.333Z] [DEBUG] [server:response_writer] Retrieving captured body: 127 bytes
+[2026-08-13T08:35:34.334Z] [DEBUG] [server:helpers] [172.17.0.1:50656] GET /health - Status: 200, Response: {"status":"healthy","specVersion":"1.15.0","gatewayVersion":"v0.4.8","servers":{"safeoutputs":{"status":"running","uptime":3}}}
+[2026-08-13T08:35:34.399Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:34.400Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:34.400Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.17.0.1:50672
+[2026-08-13T08:35:34.401Z] [INFO] [auth] Authentication successful, remote=172.17.0.1:50672, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.401Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.402Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.402Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=(none) method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:34.403Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=ping id=1
+[2026-08-13T08:35:34.403Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=ping, id=1, session=vLNvWYt9...
+[2026-08-13T08:35:34.404Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:34.404Z] [DEBUG] [server:session] Extracting session from request: remote=172.17.0.1:50672, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.404Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.405Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.405Z] [DEBUG] [server:session] Session extracted successfully: sessionID=vLNvWYt9..., remote=172.17.0.1:50672
+[2026-08-13T08:35:34.406Z] [INFO] [client] New MCP client connection, remote=172.17.0.1:50672, method=POST, path=/mcp/safeoutputs, backend=safeoutputs, session=vLNvWYt9...
+[2026-08-13T08:35:34.406Z] [DEBUG] [server:helpers] Checking request body: method=POST, hasBody=true, sessionID=vLNvWYt9...
+[2026-08-13T08:35:34.406Z] [DEBUG] [server:helpers] Request body read: size=40 bytes, sessionID=vLNvWYt9..., backendID=safeoutputs
+[2026-08-13T08:35:34.407Z] [DEBUG] [client] MCP client request body, backend=safeoutputs, body={"jsonrpc":"2.0","id":1,"method":"ping"}
+[2026-08-13T08:35:34.407Z] [DEBUG] [server:helpers] Request body logged for debugging
+[2026-08-13T08:35:34.407Z] [DEBUG] [server:session] Injecting session context: sessionID=vLNvWYt9..., backendID=safeoutputs
+[2026-08-13T08:35:34.408Z] [DEBUG] [guard:context] Setting agent ID in context: vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:35:34.408Z] [DEBUG] [server:session] Adding backend ID to context: backendID=safeoutputs
+[2026-08-13T08:35:34.408Z] [DEBUG] [server:session] Session context injected successfully
+[2026-08-13T08:35:34.409Z] [DEBUG] [server:routed] [CACHE] Creating new filtered server: backend=safeoutputs, session=vLNvWYt9...
+[2026-08-13T08:35:34.409Z] [DEBUG] [server:routed] Creating filtered server: backend=safeoutputs
+[2026-08-13T08:35:34.410Z] [DEBUG] [server:http_server] Creating SDK server: name=awmg-safeoutputs
+[2026-08-13T08:35:34.410Z] [DEBUG] [server:unified] GetToolsForBackend: backendID=safeoutputs, found=6 tools
+[2026-08-13T08:35:34.410Z] [DEBUG] [server:routed] Creating filtered server for safeoutputs with 6 tools
+[2026-08-13T08:35:34.411Z] [DEBUG] [server:routed] Backend safeoutputs has 6 tools available
+[2026-08-13T08:35:34.411Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: report_incomplete
+[2026-08-13T08:35:34.412Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: create_report_incomplete_issue
+[2026-08-13T08:35:34.412Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: create_issue
+[2026-08-13T08:35:34.413Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: missing_tool
+[2026-08-13T08:35:34.413Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: noop
+[2026-08-13T08:35:34.414Z] [DEBUG] [server:tool_registry_helpers] Registering tool without validation: missing_data
+[2026-08-13T08:35:34.414Z] [DEBUG] [server:routed] [INFO] server connecting
+[2026-08-13T08:35:34.414Z] [DEBUG] [server:routed] [INFO] server session connected session_id=HFY72VOIYSFWWHDLT7SBEY6ZN6
+[2026-08-13T08:35:34.415Z] [DEBUG] [server:response_writer] Writing response body: 59 bytes
+[2026-08-13T08:35:34.415Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=59)
+[2026-08-13T08:35:34.416Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=59)
+[2026-08-13T08:35:34.416Z] [DEBUG] [server:routed] [INFO] server session disconnected session_id=HFY72VOIYSFWWHDLT7SBEY6ZN6
+[2026-08-13T08:35:34.417Z] [DEBUG] [server:response_writer] Retrieving captured body: 59 bytes
+[2026-08-13T08:35:34.417Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=15.586585ms (non-JSON or stream)
+[2026-08-13T08:35:34.418Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized): event: message
+data: {"jsonrpc":"2.0","id":1,"result":{}}
+
+
+[2026-08-13T08:35:34.427Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:34.427Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:34.428Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.17.0.1:50686
+[2026-08-13T08:35:34.428Z] [INFO] [auth] Authentication successful, remote=172.17.0.1:50686, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.429Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.429Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.430Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=(none) method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:34.430Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=initialize id=2
+[2026-08-13T08:35:34.430Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=initialize, id=2, session=vLNvWYt9...
+[2026-08-13T08:35:34.431Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:34.431Z] [DEBUG] [server:session] Extracting session from request: remote=172.17.0.1:50686, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.432Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.432Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.432Z] [DEBUG] [server:session] Session extracted successfully: sessionID=vLNvWYt9..., remote=172.17.0.1:50686
+[2026-08-13T08:35:34.433Z] [INFO] [client] New MCP client connection, remote=172.17.0.1:50686, method=POST, path=/mcp/safeoutputs, backend=safeoutputs, session=vLNvWYt9...
+[2026-08-13T08:35:34.433Z] [DEBUG] [server:helpers] Checking request body: method=POST, hasBody=true, sessionID=vLNvWYt9...
+[2026-08-13T08:35:34.434Z] [DEBUG] [server:helpers] Request body read: size=166 bytes, sessionID=vLNvWYt9..., backendID=safeoutputs
+[2026-08-13T08:35:34.434Z] [DEBUG] [client] MCP client request body, backend=safeoutputs, body={"jsonrpc":"2.0","id":2,"method":"initialize","params":{"capabilities":{},"clientInfo":{"name":"check-mcp-servers","version":"1.0.0"},"protocolVersion":"2024-11-05"}}
+[2026-08-13T08:35:34.434Z] [DEBUG] [server:helpers] Request body logged for debugging
+[2026-08-13T08:35:34.435Z] [DEBUG] [server:session] Injecting session context: sessionID=vLNvWYt9..., backendID=safeoutputs
+[2026-08-13T08:35:34.435Z] [DEBUG] [guard:context] Setting agent ID in context: vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:35:34.436Z] [DEBUG] [server:session] Adding backend ID to context: backendID=safeoutputs
+[2026-08-13T08:35:34.436Z] [DEBUG] [server:session] Session context injected successfully
+[2026-08-13T08:35:34.436Z] [DEBUG] [server:routed] [INFO] server connecting
+[2026-08-13T08:35:34.437Z] [DEBUG] [server:routed] [INFO] server session connected session_id=376B6IHW4L2WYZKYH2M6TJZ3YT
+[2026-08-13T08:35:34.437Z] [DEBUG] [server:response_writer] Writing response body: 208 bytes
+[2026-08-13T08:35:34.438Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=208)
+[2026-08-13T08:35:34.438Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=208)
+[2026-08-13T08:35:34.439Z] [DEBUG] [server:response_writer] Retrieving captured body: 208 bytes
+[2026-08-13T08:35:34.439Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=10.111412ms (non-JSON or stream)
+[2026-08-13T08:35:34.440Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized): event: message
+data: {"jsonrpc":"2.0","id":2,"result":{"capabilities":{"logging":{},"tools":{"listChanged":true}},"protocolVersion":"2024-11-05","serverInfo":{"name":"awmg-safeoutputs","version":"v0.4.8"}}}
+
+
+[2026-08-13T08:35:34.451Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:34.452Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:34.453Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.17.0.1:50696
+[2026-08-13T08:35:34.453Z] [INFO] [auth] Authentication successful, remote=172.17.0.1:50696, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.454Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.454Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.455Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=376B6IHW... method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:34.455Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=tools/list id=3
+[2026-08-13T08:35:34.455Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=tools/list, id=3, session=vLNvWYt9...
+[2026-08-13T08:35:34.456Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:34.457Z] [DEBUG] [server:response_writer] Writing response body: 8964 bytes
+[2026-08-13T08:35:34.457Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=8964)
+[2026-08-13T08:35:34.457Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=8964)
+[2026-08-13T08:35:34.458Z] [DEBUG] [server:response_writer] Retrieving captured body: 8964 bytes
+[2026-08-13T08:35:34.458Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=4.011551ms (non-JSON or stream)
+[2026-08-13T08:35:34.462Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized, truncated): event: message
+data: {"jsonrpc":"2.0","id":3,"result":{"tools":[{"description":"[safeoutputs] WRITE-ONCE: do NOT call this tool with empty or placeholder arguments to probe or discover its schema — required fields (title, body) are listed in this schema; if you are not ready to open the real issue, call `noop` instead. Creates a new GitHub issue for tracking bugs, feature requests, or tasks. Use this for actionable work items that need assignment, labeling, and status tracking. For reports, anno...
+[2026-08-13T08:35:34.590Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:34.591Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:34.591Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.17.0.1:50700
+[2026-08-13T08:35:34.592Z] [INFO] [auth] Authentication successful, remote=172.17.0.1:50700, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.592Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.593Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.593Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=(none) method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:34.594Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=initialize id=1
+[2026-08-13T08:35:34.594Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=initialize, id=1, session=vLNvWYt9...
+[2026-08-13T08:35:34.594Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:34.595Z] [DEBUG] [server:session] Extracting session from request: remote=172.17.0.1:50700, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.595Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.596Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.596Z] [DEBUG] [server:session] Session extracted successfully: sessionID=vLNvWYt9..., remote=172.17.0.1:50700
+[2026-08-13T08:35:34.597Z] [INFO] [client] New MCP client connection, remote=172.17.0.1:50700, method=POST, path=/mcp/safeoutputs, backend=safeoutputs, session=vLNvWYt9...
+[2026-08-13T08:35:34.597Z] [DEBUG] [server:helpers] Checking request body: method=POST, hasBody=true, sessionID=vLNvWYt9...
+[2026-08-13T08:35:34.597Z] [DEBUG] [server:helpers] Request body read: size=162 bytes, sessionID=vLNvWYt9..., backendID=safeoutputs
+[2026-08-13T08:35:34.598Z] [DEBUG] [client] MCP client request body, backend=safeoutputs, body={"jsonrpc":"2.0","id":1,"method":"initialize","params":{"capabilities":{},"clientInfo":{"name":"mcp-cli-mount","version":"1.0.0"},"protocolVersion":"2024-11-05"}}
+[2026-08-13T08:35:34.598Z] [DEBUG] [server:helpers] Request body logged for debugging
+[2026-08-13T08:35:34.599Z] [DEBUG] [server:session] Injecting session context: sessionID=vLNvWYt9..., backendID=safeoutputs
+[2026-08-13T08:35:34.599Z] [DEBUG] [guard:context] Setting agent ID in context: vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:35:34.599Z] [DEBUG] [server:session] Adding backend ID to context: backendID=safeoutputs
+[2026-08-13T08:35:34.600Z] [DEBUG] [server:session] Session context injected successfully
+[2026-08-13T08:35:34.600Z] [DEBUG] [server:routed] [INFO] server connecting
+[2026-08-13T08:35:34.601Z] [DEBUG] [server:routed] [INFO] server session connected session_id=LRGJDQP3CQBVYLS2SCA7EUOFPJ
+[2026-08-13T08:35:34.601Z] [DEBUG] [server:response_writer] Writing response body: 208 bytes
+[2026-08-13T08:35:34.602Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=208)
+[2026-08-13T08:35:34.602Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=208)
+[2026-08-13T08:35:34.603Z] [DEBUG] [server:response_writer] Retrieving captured body: 208 bytes
+[2026-08-13T08:35:34.603Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=10.645927ms (non-JSON or stream)
+[2026-08-13T08:35:34.604Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized): event: message
+data: {"jsonrpc":"2.0","id":1,"result":{"capabilities":{"logging":{},"tools":{"listChanged":true}},"protocolVersion":"2024-11-05","serverInfo":{"name":"awmg-safeoutputs","version":"v0.4.8"}}}
+
+
+[2026-08-13T08:35:34.607Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:34.608Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:34.608Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.17.0.1:50700
+[2026-08-13T08:35:34.608Z] [INFO] [auth] Authentication successful, remote=172.17.0.1:50700, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.609Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.609Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.610Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=LRGJDQP3... method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:34.610Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=notifications/initialized id=<nil>
+[2026-08-13T08:35:34.611Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=notifications/initialized, id=<nil>, session=vLNvWYt9...
+[2026-08-13T08:35:34.611Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:34.611Z] [DEBUG] [server:response_writer] Setting response status code: 202
+[2026-08-13T08:35:34.612Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=202
+[2026-08-13T08:35:34.612Z] [DEBUG] [server:routed] [INFO] session initialized
+[2026-08-13T08:35:34.613Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=202
+[2026-08-13T08:35:34.613Z] [DEBUG] [server:response_writer] Retrieving captured body: 0 bytes
+[2026-08-13T08:35:34.614Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=202 duration=4.434806ms (empty body)
+[2026-08-13T08:35:34.616Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:34.617Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:34.618Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.17.0.1:50700
+[2026-08-13T08:35:34.618Z] [INFO] [auth] Authentication successful, remote=172.17.0.1:50700, path=/mcp/safeoutputs
+[2026-08-13T08:35:34.619Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:34.619Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:34.620Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=LRGJDQP3... method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:34.620Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=tools/list id=2
+[2026-08-13T08:35:34.621Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=tools/list, id=2, session=vLNvWYt9...
+[2026-08-13T08:35:34.621Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:34.622Z] [DEBUG] [server:response_writer] Writing response body: 8964 bytes
+[2026-08-13T08:35:34.622Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=8964)
+[2026-08-13T08:35:34.623Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=8964)
+[2026-08-13T08:35:34.623Z] [DEBUG] [server:response_writer] Retrieving captured body: 8964 bytes
+[2026-08-13T08:35:34.624Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=4.492147ms (non-JSON or stream)
+[2026-08-13T08:35:34.628Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized, truncated): event: message
+data: {"jsonrpc":"2.0","id":2,"result":{"tools":[{"description":"[safeoutputs] WRITE-ONCE: do NOT call this tool with empty or placeholder arguments to probe or discover its schema — required fields (title, body) are listed in this schema; if you are not ready to open the real issue, call `noop` instead. Creates a new GitHub issue for tracking bugs, feature requests, or tasks. Use this for actionable work items that need assignment, labeling, and status tracking. For reports, anno...
+[2026-08-13T08:35:57.181Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:57.181Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:57.182Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.30.0.20:55242
+[2026-08-13T08:35:57.183Z] [INFO] [auth] Authentication successful, remote=172.30.0.20:55242, path=/mcp/safeoutputs
+[2026-08-13T08:35:57.184Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:57.184Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:57.185Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=(none) method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:57.185Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=initialize id=0
+[2026-08-13T08:35:57.186Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=initialize, id=0, session=vLNvWYt9...
+[2026-08-13T08:35:57.186Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:57.187Z] [DEBUG] [server:session] Extracting session from request: remote=172.30.0.20:55242, path=/mcp/safeoutputs
+[2026-08-13T08:35:57.187Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:57.212Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:57.216Z] [DEBUG] [server:session] Session extracted successfully: sessionID=vLNvWYt9..., remote=172.30.0.20:55242
+[2026-08-13T08:35:57.217Z] [INFO] [client] New MCP client connection, remote=172.30.0.20:55242, method=POST, path=/mcp/safeoutputs, backend=safeoutputs, session=vLNvWYt9...
+[2026-08-13T08:35:57.217Z] [DEBUG] [server:helpers] Checking request body: method=POST, hasBody=true, sessionID=vLNvWYt9...
+[2026-08-13T08:35:57.218Z] [DEBUG] [server:helpers] Request body read: size=222 bytes, sessionID=vLNvWYt9..., backendID=safeoutputs
+[2026-08-13T08:35:57.219Z] [DEBUG] [client] MCP client request body, backend=safeoutputs, body={"jsonrpc":"2.0","id":0,"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"sampling":{},"elicitation":{"form":{},"url":{}}},"clientInfo":{"name":"github-copilot-developer","version":"1.0.79"}}}
+[2026-08-13T08:35:57.219Z] [DEBUG] [server:helpers] Request body logged for debugging
+[2026-08-13T08:35:57.219Z] [DEBUG] [server:session] Injecting session context: sessionID=vLNvWYt9..., backendID=safeoutputs
+[2026-08-13T08:35:57.220Z] [DEBUG] [guard:context] Setting agent ID in context: vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:35:57.220Z] [DEBUG] [server:session] Adding backend ID to context: backendID=safeoutputs
+[2026-08-13T08:35:57.220Z] [DEBUG] [server:session] Session context injected successfully
+[2026-08-13T08:35:57.221Z] [DEBUG] [server:routed] [INFO] server connecting
+[2026-08-13T08:35:57.222Z] [DEBUG] [server:routed] [INFO] server session connected session_id=5IDJLPQBT2GZBN4UB5RJZG6V75
+[2026-08-13T08:35:57.222Z] [DEBUG] [server:response_writer] Writing response body: 208 bytes
+[2026-08-13T08:35:57.223Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=208)
+[2026-08-13T08:35:57.223Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=208)
+[2026-08-13T08:35:57.224Z] [DEBUG] [server:response_writer] Retrieving captured body: 208 bytes
+[2026-08-13T08:35:57.224Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=39.736289ms (non-JSON or stream)
+[2026-08-13T08:35:57.226Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:57.226Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:57.227Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.30.0.20:55248
+[2026-08-13T08:35:57.227Z] [INFO] [auth] Authentication successful, remote=172.30.0.20:55248, path=/mcp/safeoutputs
+[2026-08-13T08:35:57.227Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized): event: message
+data: {"jsonrpc":"2.0","id":0,"result":{"capabilities":{"logging":{},"tools":{"listChanged":true}},"protocolVersion":"2025-11-25","serverInfo":{"name":"awmg-safeoutputs","version":"v0.4.8"}}}
+
+
+[2026-08-13T08:35:57.228Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:57.228Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:57.229Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=5IDJLPQB... method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:57.229Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=notifications/initialized id=<nil>
+[2026-08-13T08:35:57.230Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=notifications/initialized, id=<nil>, session=vLNvWYt9...
+[2026-08-13T08:35:57.230Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:57.230Z] [DEBUG] [server:response_writer] Setting response status code: 202
+[2026-08-13T08:35:57.231Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=202
+[2026-08-13T08:35:57.231Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=202
+[2026-08-13T08:35:57.232Z] [DEBUG] [server:response_writer] Retrieving captured body: 0 bytes
+[2026-08-13T08:35:57.232Z] [DEBUG] [server:routed] [INFO] session initialized
+[2026-08-13T08:35:57.233Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=202 duration=4.462497ms (empty body)
+[2026-08-13T08:35:57.237Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=GET, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:57.237Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:57.238Z] [DEBUG] [server:auth] Authenticating request: method=GET, path=/mcp/safeoutputs, remote=172.30.0.20:55248
+[2026-08-13T08:35:57.238Z] [INFO] [auth] Authentication successful, remote=172.30.0.20:55248, path=/mcp/safeoutputs
+[2026-08-13T08:35:57.238Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:57.239Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:57.240Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=5IDJLPQB... method=GET path=/mcp/safeoutputs
+[2026-08-13T08:35:57.240Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:57.240Z] [DEBUG] [server:response_writer] Setting response status code: 200
+[2026-08-13T08:35:57.241Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=200
+[2026-08-13T08:35:57.241Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=200
+[2026-08-13T08:35:57.262Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:57.283Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:57.284Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.30.0.20:55260
+[2026-08-13T08:35:57.284Z] [INFO] [auth] Authentication successful, remote=172.30.0.20:55260, path=/mcp/safeoutputs
+[2026-08-13T08:35:57.285Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:57.285Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:57.286Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=5IDJLPQB... method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:57.287Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=tools/list id=1
+[2026-08-13T08:35:57.287Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=tools/list, id=1, session=vLNvWYt9...
+[2026-08-13T08:35:57.289Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:57.291Z] [DEBUG] [server:response_writer] Writing response body: 8964 bytes
+[2026-08-13T08:35:57.291Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=8964)
+[2026-08-13T08:35:57.292Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=8964)
+[2026-08-13T08:35:57.293Z] [DEBUG] [server:response_writer] Retrieving captured body: 8964 bytes
+[2026-08-13T08:35:57.293Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=8.103316ms (non-JSON or stream)
+[2026-08-13T08:35:57.296Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:35:57.297Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:35:57.297Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.30.0.20:55266
+[2026-08-13T08:35:57.298Z] [INFO] [auth] Authentication successful, remote=172.30.0.20:55266, path=/mcp/safeoutputs
+[2026-08-13T08:35:57.298Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:35:57.299Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:35:57.299Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized, truncated): event: message
+data: {"jsonrpc":"2.0","id":1,"result":{"tools":[{"description":"[safeoutputs] WRITE-ONCE: do NOT call this tool with empty or placeholder arguments to probe or discover its schema — required fields (title, body) are listed in this schema; if you are not ready to open the real issue, call `noop` instead. Creates a new GitHub issue for tracking bugs, feature requests, or tasks. Use this for actionable work items that need assignment, labeling, and status tracking. For reports, anno...
+[2026-08-13T08:35:57.300Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=5IDJLPQB... method=POST path=/mcp/safeoutputs
+[2026-08-13T08:35:57.300Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=tools/list id=2
+[2026-08-13T08:35:57.300Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=tools/list, id=2, session=vLNvWYt9...
+[2026-08-13T08:35:57.301Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:35:57.302Z] [DEBUG] [server:response_writer] Writing response body: 8964 bytes
+[2026-08-13T08:35:57.302Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=8964)
+[2026-08-13T08:35:57.303Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=8964)
+[2026-08-13T08:35:57.303Z] [DEBUG] [server:response_writer] Retrieving captured body: 8964 bytes
+[2026-08-13T08:35:57.304Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=5.096844ms (non-JSON or stream)
+[2026-08-13T08:35:57.308Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized, truncated): event: message
+data: {"jsonrpc":"2.0","id":2,"result":{"tools":[{"description":"[safeoutputs] WRITE-ONCE: do NOT call this tool with empty or placeholder arguments to probe or discover its schema — required fields (title, body) are listed in this schema; if you are not ready to open the real issue, call `noop` instead. Creates a new GitHub issue for tracking bugs, feature requests, or tasks. Use this for actionable work items that need assignment, labeling, and status tracking. For reports, anno...
+[2026-08-13T08:36:00.607Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:36:00.608Z] [DEBUG] [launcher:health] Running health check: checking 1 servers
+[2026-08-13T08:36:00.608Z] [DEBUG] [launcher:launcher] GetServerState: serverID=safeoutputs
+[2026-08-13T08:36:00.609Z] [DEBUG] [launcher:launcher] Server state: serverID=safeoutputs, status=running, startedAt=2026-08-13 08:35:30.552409625 +0000 UTC m=+0.899075285
+[2026-08-13T08:36:14.411Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=POST, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:36:14.412Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:36:14.412Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/mcp/safeoutputs, remote=172.30.0.20:55266
+[2026-08-13T08:36:14.413Z] [INFO] [auth] Authentication successful, remote=172.30.0.20:55266, path=/mcp/safeoutputs
+[2026-08-13T08:36:14.413Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:36:14.414Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:36:14.415Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=5IDJLPQB... method=POST path=/mcp/safeoutputs
+[2026-08-13T08:36:14.415Z] [DEBUG] [server:sdk-frontend]     JSON-RPC Request: method=tools/call id=3
+[2026-08-13T08:36:14.416Z] [DEBUG] [sdk-frontend] JSON-RPC request parsed: mode=routed:safeoutputs, method=tools/call, id=3, session=vLNvWYt9...
+[2026-08-13T08:36:14.416Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:36:14.417Z] [DEBUG] [server:routed] [ROUTED] Calling unified handler for: create_issue
+[2026-08-13T08:36:14.418Z] [DEBUG] [server:session] Extracted session ID from context: vLNvWYt9...
+[2026-08-13T08:36:14.418Z] [DEBUG] [payload] Middleware processing tool call: tool=safeoutputs___create_issue, queryID=f57d47e7254dd7713b1e3f3a5bfb279b, session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, baseDir=/tmp/gh-aw/mcp-payloads
+[2026-08-13T08:36:14.419Z] [DEBUG] [mcp:tool_result] Parsing arguments for tool: create_issue
+[2026-08-13T08:36:14.419Z] [DEBUG] [mcp:tool_result] Parsed 3 arguments
+[2026-08-13T08:36:14.420Z] [DEBUG] [server:session] Extracted session ID from context: vLNvWYt9...
+[2026-08-13T08:36:14.421Z] [INFO] [client] MCP tool call request, session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, tool=create_issue, args={"body":"## Summary (last 24 hours, UTC)\n\n### Commits\n- `b947dad` — \"simple app commit\" (2026-08-13 08:13 UTC)\n\n### Issues\n- **#1** — [github copilot support](../issues/1) — opened\n- **#2** — [\\[aw\\] Issue_summary failed](../issues/2) — opened (auto-generated failure notice)\n\n### Pull Requests\n- None opened, updated, or merged in this window.\n\n### Workflow Runs\n- **Issue_summary** — completed with **failure** (run started 08:14 UTC), which triggered issue #2.\n- **Daily Report Status** — this report's own run, currently in progress.\n\n### Notes\n- The `Issue_summary` workflow failure is worth investigating since it auto-filed issue #2.\n","labels":"[\"daily-report\"]","title":"Daily Activity Report — 2026-08-13"}
+[2026-08-13T08:36:14.421Z] [DEBUG] [server:session] Extracted session ID from context: vLNvWYt9...
+[2026-08-13T08:36:14.422Z] [DEBUG] [server:session] Checking session: sessionID=vLNvWYt9...
+[2026-08-13T08:36:14.422Z] [DEBUG] [server:session] Auto-creating session for ID: vLNvWYt9...
+[2026-08-13T08:36:14.423Z] [DEBUG] [server:session] Creating new session: sessionID=vLNvWYt9..., has_token=false
+[2026-08-13T08:36:14.423Z] [DEBUG] [server:session] Session auto-created for ID: vLNvWYt9...
+[2026-08-13T08:36:14.424Z] [DEBUG] [server:session] Created session directory: /tmp/gh-aw/mcp-payloads/vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.424Z] [DEBUG] [server:session] Session validated for ID: vLNvWYt9...
+[2026-08-13T08:36:14.425Z] [DEBUG] [server:unified] callBackendTool: serverID=safeoutputs, toolName=create_issue, args=map[body:## Summary (last 24 hours, UTC)
+
+### Commits
+- `b947dad` — "simple app commit" (2026-08-13 08:13 UTC)
+
+### Issues
+- **#1** — [github copilot support](../issues/1) — opened
+- **#2** — [\[aw\] Issue_summary failed](../issues/2) — opened (auto-generated failure notice)
+
+### Pull Requests
+- None opened, updated, or merged in this window.
+
+### Workflow Runs
+- **Issue_summary** — completed with **failure** (run started 08:14 UTC), which triggered issue #2.
+- **Daily Report Status** — this report's own run, currently in progress.
+
+### Notes
+- The `Issue_summary` workflow failure is worth investigating since it auto-filed issue #2.
+ labels:["daily-report"] title:Daily Activity Report — 2026-08-13]
+[2026-08-13T08:36:14.425Z] [DEBUG] [tracing:provider] Starting tool call span: serverID=safeoutputs, toolName=create_issue
+[2026-08-13T08:36:14.426Z] [DEBUG] [guard:registry] Getting guard for serverID=safeoutputs
+[2026-08-13T08:36:14.426Z] [DEBUG] [guard:registry] Found guard for serverID=safeoutputs, guardName=write-sink
+[2026-08-13T08:36:14.426Z] [DEBUG] [server:session] Extracted session ID from context: vLNvWYt9...
+[2026-08-13T08:36:14.427Z] [DEBUG] [server:guard_init] Resolving guard policy: serverID=safeoutputs
+[2026-08-13T08:36:14.427Z] [DEBUG] [config:guard_policy] ParseServerGuardPolicy: serverID=safeoutputs, keyCount=1
+[2026-08-13T08:36:14.428Z] [DEBUG] [config:guard_policy] ParsePolicyMap: hasAllowOnly=false, hasWriteSink=true, keyCount=1
+[2026-08-13T08:36:14.428Z] [DEBUG] [config:guard_policy] Parsing guard policy JSON: len=58
+[2026-08-13T08:36:14.429Z] [DEBUG] [config:guard_policy] UnmarshalJSON: parsing guard policy, keys=1
+[2026-08-13T08:36:14.429Z] [DEBUG] [config:guard_policy] UnmarshalJSON: guard policy type is write-sink
+[2026-08-13T08:36:14.429Z] [DEBUG] [config:guard_policy] ValidateGuardPolicy: delegating to write-sink validation, acceptCount=1, sinkVisibility="public"
+[2026-08-13T08:36:14.430Z] [DEBUG] [config:guard_policy] ValidateWriteSinkPolicy: acceptCount=1, sinkVisibility="public"
+[2026-08-13T08:36:14.430Z] [DEBUG] [config:guard_policy] ValidateWriteSinkPolicy: wildcard accept, policy is valid
+[2026-08-13T08:36:14.430Z] [DEBUG] [server:guard_init] Using server-level guard policy: serverID=safeoutputs
+[2026-08-13T08:36:14.431Z] [DEBUG] [guard:wasm] BuildLabelAgentPayload: trustedBots=0, trustedUsers=0
+[2026-08-13T08:36:14.432Z] [INFO] [difc] [safeoutputs] Initializing guard session state: session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, policy_source=server
+[2026-08-13T08:36:14.433Z] [INFO] [difc] [safeoutputs] Calling label_agent: session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, guard=write-sink, policy={"write-sink":{"accept":["*"],"sink-visibility":"public"}}
+[2026-08-13T08:36:14.434Z] [DEBUG] [guard:context] Retrieved agent ID from context: vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.434Z] [DEBUG] [difc:agent] GetOrCreate called for agentID=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.435Z] [DEBUG] [difc:agent] Creating agent labels with tags: agentID=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, secrecyTags=[], integrityTags=[]
+[2026-08-13T08:36:14.435Z] [DEBUG] [difc:agent] Created new agent: vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv with default labels (secrecy: [], integrity: [])
+[2026-08-13T08:36:14.435Z] [DEBUG] [guard:label_agent] Calling LabelAgent: guard=write-sink
+[2026-08-13T08:36:14.436Z] [DEBUG] [guard:write-sink] LabelAgent: returning empty labels (write-sink does not label agents)
+[2026-08-13T08:36:14.436Z] [DEBUG] [guard:label_agent] Creating empty agent labels result: mode="filter"
+[2026-08-13T08:36:14.437Z] [DEBUG] [guard:label_agent] Applying label agent result: difc_mode="filter", secrecy_tags=0, integrity_tags=0, defaultMode=strict
+[2026-08-13T08:36:14.437Z] [DEBUG] [guard:label_agent] Enforcement mode overridden: default=strict, override=filter
+[2026-08-13T08:36:14.438Z] [DEBUG] [difc:labels] StringsToTags: converting 0 string values to tags
+[2026-08-13T08:36:14.438Z] [DEBUG] [difc:labels] StringsToTags: produced 0 tags from 0 input values
+[2026-08-13T08:36:14.439Z] [DEBUG] [difc:agent] Agent vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv adding 0 secrecy tags
+[2026-08-13T08:36:14.439Z] [DEBUG] [difc:tagset] addAll: count=0
+[2026-08-13T08:36:14.439Z] [DEBUG] [difc:labels] StringsToTags: converting 0 string values to tags
+[2026-08-13T08:36:14.440Z] [DEBUG] [difc:labels] StringsToTags: produced 0 tags from 0 input values
+[2026-08-13T08:36:14.440Z] [DEBUG] [difc:agent] Agent vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv adding 0 integrity tags
+[2026-08-13T08:36:14.441Z] [DEBUG] [difc:tagset] addAll: count=0
+[2026-08-13T08:36:14.441Z] [DEBUG] [guard:label_agent] Label agent result applied: effective_mode=filter
+[2026-08-13T08:36:14.442Z] [DEBUG] [guard:label_agent] LabelAgent completed: guard=write-sink, mode=filter
+[2026-08-13T08:36:14.443Z] [INFO] [difc] [safeoutputs] label_agent response: session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, guard=write-sink, response={"agent":{"secrecy":[],"integrity":[]},"difc_mode":"filter"}
+[2026-08-13T08:36:14.443Z] [INFO] [difc] [safeoutputs] Guard policy initialized: session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, guard_policy.source=server, difc_mode=filter, guard_policy.normalized=map[]
+[2026-08-13T08:36:14.444Z] [DEBUG] [guard:context] Retrieved agent ID from context: vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.444Z] [DEBUG] [difc:agent] GetOrCreate called for agentID=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.445Z] [DEBUG] [guard:pipeline] [DIFC] Phase 0: agent=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv secrecy=[] integrity=[]
+[2026-08-13T08:36:14.445Z] [DEBUG] [guard:context] Setting request state in context
+[2026-08-13T08:36:14.446Z] [DEBUG] [guard:write-sink] LabelResource: tool=create_issue, operation=write, sink-visibility=public (empty resource secrecy — tainted agents blocked)
+[2026-08-13T08:36:14.446Z] [DEBUG] [guard:pipeline] [DIFC] Phase 1: resource=write-sink:public (create_issue) op=write secrecy=[] integrity=[]
+[2026-08-13T08:36:14.447Z] [DEBUG] [difc:pipeline_decisions] EvaluateCoarseAccess: operation=write, resource=write-sink:public (create_issue)
+[2026-08-13T08:36:14.447Z] [DEBUG] [difc:evaluator] Evaluating access: operation=write, resource=write-sink:public (create_issue)
+[2026-08-13T08:36:14.447Z] [DEBUG] [difc:evaluator] Evaluating write access: resource=write-sink:public (create_issue), agentSecrecy=[], agentIntegrity=[]
+[2026-08-13T08:36:14.448Z] [DEBUG] [difc:evaluator] Write access allowed: resource=write-sink:public (create_issue)
+[2026-08-13T08:36:14.448Z] [DEBUG] [difc:pipeline_decisions] EvaluateCoarseAccess: outcome=allowed, operation=write
+[2026-08-13T08:36:14.449Z] [DEBUG] [guard:pipeline] [DIFC] Phase 2: access allowed for agent vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv to write-sink:public (create_issue)
+[2026-08-13T08:36:14.449Z] [DEBUG] [difc:labels] TagsToStrings: converting 0 tags to strings
+[2026-08-13T08:36:14.449Z] [DEBUG] [difc:labels] TagsToStrings: converting 0 tags to strings
+[2026-08-13T08:36:14.450Z] [DEBUG] [tracing:provider] Starting backend execute span: serverID=safeoutputs, toolName=create_issue
+[2026-08-13T08:36:14.450Z] [DEBUG] [server:unified] executeBackendToolCall: serverID=safeoutputs, toolName=create_issue
+[2026-08-13T08:36:14.451Z] [DEBUG] [backend] [safeoutputs] GetOrLaunchForSession called: server=safeoutputs, session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.452Z] [DEBUG] [launcher:launcher] Server config found: serverID=safeoutputs, type=stdio
+[2026-08-13T08:36:14.452Z] [DEBUG] [launcher:launcher] Checking session pool: serverID=safeoutputs, sessionID=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.452Z] [DEBUG] [launcher:pool] Connection not found: backend=safeoutputs, session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.453Z] [DEBUG] [launcher:launcher] Session connection not found, creating new: serverID=safeoutputs, sessionID=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.453Z] [DEBUG] [launcher:pool] Connection not found: backend=safeoutputs, session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.454Z] [INFO] [backend] [safeoutputs] Launching MCP backend server for session 'vLNvWYt9...': server=safeoutputs for session 'vLNvWYt9...', command=docker, args=[run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:36:14.455Z] [DEBUG] [launcher:launcher] Launching new session server: serverID=safeoutputs, sessionID=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, command=docker
+[2026-08-13T08:36:14.455Z] [DEBUG] [launcher:launcher] Starting server with timeout: serverID=safeoutputs, sessionID=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, timeout=2m0s
+[2026-08-13T08:36:14.456Z] [DEBUG] [launcher:launcher] Starting connection goroutine: serverID=safeoutputs
+[2026-08-13T08:36:14.456Z] [INFO] [backend] Creating new MCP backend connection, command=docker, args=[run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:36:14.457Z] [DEBUG] [envutil:expand] Expanding env args: input_count=52
+[2026-08-13T08:36:14.457Z] [DEBUG] [envutil:expand] Expanding env var: name=GH_AW_ASSETS_BRANCH
+[2026-08-13T08:36:14.458Z] [DEBUG] [envutil:expand] Expanding env var: name=GH_AW_ASSETS_ALLOWED_EXTS
+[2026-08-13T08:36:14.458Z] [DEBUG] [envutil:expand] Env args expansion complete: output_count=52
+[2026-08-13T08:36:14.459Z] [DEBUG] [mcp:connection] Expanded args for Docker env: [run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH= -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS= -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:36:14.459Z] [INFO] [backend] Starting MCP backend server, command=docker, args=[run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH= -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS= -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:36:14.460Z] [DEBUG] [mcp:connection] Initiating MCP server connection and handshake
+[2026-08-13T08:36:14.627Z] [INFO] [backend] [safeoutputs] [stderr] Git configured with standard GitHub Actions identity
+[2026-08-13T08:36:14.660Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.654Z] [mcp_server_core] Module is being loaded
+[2026-08-13T08:36:14.689Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.688Z] [safeoutputs] Loading safe-outputs configuration
+[2026-08-13T08:36:14.691Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.689Z] [safeoutputs] Reading config from file: /home/runner/work/_temp/gh-aw/safeoutputs/config.json
+[2026-08-13T08:36:14.692Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.689Z] [safeoutputs] Config file exists at: /home/runner/work/_temp/gh-aw/safeoutputs/config.json
+[2026-08-13T08:36:14.693Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.689Z] [safeoutputs] Config file content length: 165 characters
+[2026-08-13T08:36:14.694Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.689Z] [safeoutputs] Config file read successfully, attempting to parse JSON
+[2026-08-13T08:36:14.695Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.690Z] [safeoutputs] Successfully parsed config from file with 6 configuration keys
+[2026-08-13T08:36:14.696Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.690Z] [safeoutputs] Final processed config: {"create_issue":{"max":1},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"report_incomplete":{}}
+[2026-08-13T08:36:14.697Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.690Z] [safeoutputs] Loading safe-outputs tools
+[2026-08-13T08:36:14.698Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.691Z] [safeoutputs] Reading tools from file: /home/runner/work/_temp/gh-aw/safeoutputs/tools.json
+[2026-08-13T08:36:14.699Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.691Z] [safeoutputs] Tools file exists at: /home/runner/work/_temp/gh-aw/safeoutputs/tools.json
+[2026-08-13T08:36:14.700Z] [INFO] [backend] Successfully connected to MCP backend server, command=docker
+[2026-08-13T08:36:14.700Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.691Z] [safeoutputs] Tools file content length: 10551 characters
+[2026-08-13T08:36:14.701Z] [INFO] [backend] Started MCP server: docker [run --rm -i -e NO_COLOR=... -e TERM=... -e PYTHONUNBUFFERED=... --entrypoint sh -v /home/runner/work/my-agentic-workflows/my-agentic-workflows:/home/runner/work/my-agentic-workflows/my-agentic-workflows:rw -v /home/runner/work/_temp/gh-aw/safeoutputs:/home/runner/work/_temp/gh-aw/safeoutputs:rw -v /tmp/gh-aw:/tmp/gh-aw:rw -e GH_AW_ASSETS_MAX_SIZE_KB=... -e GH_AW_POLICY_ALLOW_CREATE_PULL_REQUEST=... -e DEFAULT_BRANCH=mast... -e GITHUB_WORKSPACE=/hom... -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH=/hom... -e GITHUB_REPOSITORY=luka... -e GH_AW_ASSETS_BRANCH= -e GH_AW_MCP_LOG_DIR=/tmp... -e DEBUG=... -e GH_AW_ASSETS_ALLOWED_EXTS= -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH=/hom... -e GITHUB_TOKEN=ghs_... -e RUNNER_TEMP=/hom... -e GH_AW_SAFE_OUTPUTS=/hom... -e GITHUB_SHA=b947... -w /home/runner/work/my-agentic-workflows/my-agentic-workflows ghcr.io/github/gh-aw-node -c sh /home/runner/work/_temp/gh-aw/safeoutputs/start_safe_outputs_mcp.sh]
+[2026-08-13T08:36:14.702Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.691Z] [safeoutputs] Tools file read successfully, attempting to parse JSON
+[2026-08-13T08:36:14.702Z] [INFO] [backend] [safeoutputs] Successfully launched MCP backend server for session 'vLNvWYt9...': server=safeoutputs for session 'vLNvWYt9...'
+[2026-08-13T08:36:14.703Z] [DEBUG] [launcher:launcher] Connection established: serverID=safeoutputs for session 'vLNvWYt9...'
+[2026-08-13T08:36:14.703Z] [DEBUG] [launcher:pool] Added new connection to pool: backend=safeoutputs, session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:14.704Z] [DEBUG] [mcp:connection_logging] Outbound RPC request: serverID=safeoutputs, method=tools/call, payloadBytes=841
+[2026-08-13T08:36:14.704Z] [DEBUG] [mcp:connection_logging] snapshotTags: no agent tag snapshot attached
+[2026-08-13T08:36:14.704Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.691Z] [safeoutputs] Successfully parsed 5 tools from file
+[2026-08-13T08:36:14.705Z] [DEBUG] [rpc] safeoutputs→tools/call 841b {"jsonrpc":"2.0","method":"tools/call","params":{"arguments":{"body":"## Summary (last 24 hours, UTC)\n\n### Commits\n- `b947dad` — \"simple app commit\" (2026-08-13 08:13 UTC)\n\n### Issues\n- **#1** — [github copilot support](../issues/1) — opened\n- **#2** — [\\[aw\\] Issue_summary failed](../issues/2) — opened (auto-generated failure notice)\n\n### Pull Requests\n- None opened, updated, or merged in this window.\n\n### Workflow Runs\n- **Issue_summary** — completed with **failure** (run started 08:14 UTC), which triggered issue #2.\n- **Daily Report Status** — this report's own run, currently in progress.\n\n### Notes\n- The `Issue_summary` workflow failure is worth investigating since it auto-filed issue #2.\n","labels":"[\"daily-report\"]","title":"Daily Activity Report — 2026-08-13"},"name":"create_issue"}}
+[2026-08-13T08:36:14.705Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.694Z] [safeoutputs] Configured git safe.directory for bridge context: /home/runner/work/my-agentic-workflows/my-agentic-workflows
+[2026-08-13T08:36:14.706Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.695Z] [safeoutputs]   output file: /home/runner/work/_temp/gh-aw/safeoutputs/outputs.jsonl
+[2026-08-13T08:36:14.707Z] [DEBUG] [mcp:connection] Dispatching SDK method: tools/call, serverID=safeoutputs
+[2026-08-13T08:36:14.707Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.695Z] [safeoutputs]   config: {"create_issue":{"max":1},"create_report_incomplete_issue":{},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"false"},"report_incomplete":{}}
+[2026-08-13T08:36:14.707Z] [DEBUG] [mcp:helpers] callParamMethod: validating SDK session for serverID=safeoutputs
+[2026-08-13T08:36:14.708Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: create_issue
+[2026-08-13T08:36:14.708Z] [DEBUG] [mcp:helpers] unmarshalParams: converting params_json_len=792 bytes to typed struct
+[2026-08-13T08:36:14.709Z] [DEBUG] [mcp:helpers] callParamMethod: invoking SDK operation for serverID=safeoutputs
+[2026-08-13T08:36:14.709Z] [DEBUG] [mcp:connection] callTool: parsed name=create_issue, argumentCount=3
+[2026-08-13T08:36:14.710Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: missing_tool
+[2026-08-13T08:36:14.711Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: noop
+[2026-08-13T08:36:14.712Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: missing_data
+[2026-08-13T08:36:14.713Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.696Z] [safeoutputs] Registered tool: report_incomplete
+[2026-08-13T08:36:14.714Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.697Z] [safeoutputs] Registered tool: create_report_incomplete_issue
+[2026-08-13T08:36:14.714Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.697Z] [safeoutputs]   tools: create_issue, missing_tool, noop, missing_data, report_incomplete, create_report_incomplete_issue
+[2026-08-13T08:36:14.715Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.697Z] [safeoutputs] v1.0.0 ready on stdio
+[2026-08-13T08:36:14.716Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.697Z] [safeoutputs]   tools: create_issue, missing_tool, noop, missing_data, report_incomplete, create_report_incomplete_issue
+[2026-08-13T08:36:14.717Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.697Z] [safeoutputs] listening...
+[2026-08-13T08:36:14.718Z] [DEBUG] [mcp:helpers] marshalToResponse: result_len=63 bytes
+[2026-08-13T08:36:14.718Z] [DEBUG] [mcp:connection_logging] Inbound RPC response: serverID=safeoutputs, payloadBytes=97, hasError=false
+[2026-08-13T08:36:14.718Z] [DEBUG] [mcp:connection_logging] snapshotTags: no agent tag snapshot attached
+[2026-08-13T08:36:14.719Z] [DEBUG] [rpc] safeoutputs←resp 97b {"jsonrpc":"2.0","id":1,"result":{"content":[{"type":"text","text":"{\"result\":\"success\"}"}]}}
+[2026-08-13T08:36:14.719Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.699Z] [safeoutputs] recv: {"jsonrpc":"2.0","id":1,"method":"initialize","params":{"clientInfo":{"name":"awmg","version":"v0.4.8"},"protocolVersion":"2025-11-25","capabilities":{"roots":{"listChanged":true}}}}
+[2026-08-13T08:36:14.720Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.699Z] [safeoutputs] client info: {"name":"awmg","version":"v0.4.8"}
+[2026-08-13T08:36:14.720Z] [DEBUG] [difc:pipeline_decisions] ShouldCallLabelResponse: operation=write, mode=filter, result=false
+[2026-08-13T08:36:14.721Z] [DEBUG] [guard:pipeline] [DIFC] Phase 4: skipping LabelResponse for write operation in filter mode
+[2026-08-13T08:36:14.721Z] [DEBUG] [difc:pipeline_decisions] FilterAndConvertLabeledData: operation=write, mode=filter, hasData=false
+[2026-08-13T08:36:14.722Z] [DEBUG] [difc:pipeline_decisions] FilterAndConvertLabeledData: labeledData is nil, returning empty result
+[2026-08-13T08:36:14.722Z] [DEBUG] [difc:pipeline_decisions] ShouldAccumulateReadLabels: operation=write, mode=filter, accumulate=false
+[2026-08-13T08:36:14.723Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.699Z] [safeoutputs] send: {"jsonrpc":"2.0","id":1,"result":{"serverInfo":{"name":"safeoutputs","version":"1.0.0"},"protocolVersion":"2025-11-25","capabilities":{"tools":{}}}}
+[2026-08-13T08:36:14.723Z] [DEBUG] [mcp:tool_result] Converting backend result to CallToolResult
+[2026-08-13T08:36:14.723Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.700Z] [safeoutputs] recv: {"jsonrpc":"2.0","method":"notifications/initialized","params":{}}
+[2026-08-13T08:36:14.724Z] [DEBUG] [mcp:tool_result] Converted result: content_items=1, is_error=false
+[2026-08-13T08:36:14.724Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.700Z] [safeoutputs] ignore notifications/initialized
+[2026-08-13T08:36:14.725Z] [INFO] [client] MCP tool call response, session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv, tool=create_issue, result={"content":[{"text":"{\"result\":\"success\"}","type":"text"}]}
+[2026-08-13T08:36:14.725Z] [DEBUG] [middleware:jqschema] tryApplyToolResponseFilter: tool=safeoutputs___create_issue, queryID=f57d47e7254dd7713b1e3f3a5bfb279b, hasFilter=false
+[2026-08-13T08:36:14.725Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.710Z] [safeoutputs] recv: {"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"create_issue","arguments":{"body":"## Summary (last 24 hours, UTC)\n\n### Commits\n- `b947dad` — \"simple app commit\" (2026-08-13 08:13 UTC)\n\n### Issues\n- **#1** — [github copilot support](../issues/1) — opened\n- **#2** — [\\[aw\\] Issue_summary failed](../issues/2) — opened (auto-generated failure notice)\n\n### Pull Requests\n- None opened, updated, or merged in this window.\n\n### Workflow Runs\n- **Issue_summary** — completed with **failure** (run started 08:14 UTC), which triggered issue #2.\n- **Daily Report Status** — this report's own run, currently in progress.\n\n### Notes\n- The `Issue_summary` workflow failure is worth investigating since it auto-filed issue #2.\n","labels":"[\"daily-report\"]","title":"Daily Activity Report — 2026-08-13"}}}
+[2026-08-13T08:36:14.726Z] [DEBUG] [mcpresult:mcpresult] Normalizing MCP content items from type []interface {}
+[2026-08-13T08:36:14.726Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.712Z] [safeoutputs] Calling handler for tool: create_issue
+[2026-08-13T08:36:14.727Z] [DEBUG] [mcpresult:mcpresult] Normalized []interface{} content: input=1 output=1
+[2026-08-13T08:36:14.727Z] [DEBUG] [middleware:jqschema] fast-path: content_text_len=20 within threshold-4096=520192, skipping json.Marshal: tool=safeoutputs___create_issue, queryID=f57d47e7254dd7713b1e3f3a5bfb279b
+[2026-08-13T08:36:14.728Z] [DEBUG] [server:response_writer] Writing response body: 120 bytes
+[2026-08-13T08:36:14.728Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.717Z] [safeoutputs] Handler returned for tool: create_issue
+[2026-08-13T08:36:14.729Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=120)
+[2026-08-13T08:36:14.729Z] [INFO] [backend] [safeoutputs] [stderr] [2026-08-13T08:36:14.717Z] [safeoutputs] send: {"jsonrpc":"2.0","id":2,"result":{"content":[{"type":"text","text":"{\"result\":\"success\"}"}],"isError":false}}
+[2026-08-13T08:36:14.729Z] [DEBUG] [httputil:httputil] BaseResponseWriter.Write: implicit 200 status captured (first write, len=120)
+[2026-08-13T08:36:14.730Z] [DEBUG] [server:response_writer] Retrieving captured body: 120 bytes
+[2026-08-13T08:36:14.730Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=316.417121ms (non-JSON or stream)
+[2026-08-13T08:36:14.731Z] [DEBUG] [server:sdk-frontend]     Raw response (sanitized): event: message
+data: {"jsonrpc":"2.0","id":3,"result":{"content":[{"type":"text","text":"{\"result\":\"success\"}"}]}}
+
+
+[2026-08-13T08:36:17.025Z] [DEBUG] [server:response_writer] Retrieving captured body: 0 bytes
+[2026-08-13T08:36:17.026Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=200 duration=19.786652808s (empty body)
+[2026-08-13T08:36:17.027Z] [DEBUG] [tracing:provider] Handling request: span=gateway.request, method=DELETE, path=/mcp/safeoutputs, remoteParent=false
+[2026-08-13T08:36:17.027Z] [DEBUG] [tracing:provider] Span started: span=gateway.request, traceID=00000000000000000000000000000000
+[2026-08-13T08:36:17.028Z] [DEBUG] [server:auth] Authenticating request: method=DELETE, path=/mcp/safeoutputs, remote=172.30.0.20:55266
+[2026-08-13T08:36:17.028Z] [INFO] [auth] Authentication successful, remote=172.30.0.20:55266, path=/mcp/safeoutputs
+[2026-08-13T08:36:17.091Z] [DEBUG] [auth:header] Extracting session ID from auth header: sanitized=vLNv...
+[2026-08-13T08:36:17.091Z] [DEBUG] [auth:header] Using plain agent ID as session ID
+[2026-08-13T08:36:17.092Z] [DEBUG] [server:sdk-frontend] >>> SDK Request [routed:safeoutputs] session=vLNvWYt9... mcp-session=5IDJLPQB... method=DELETE path=/mcp/safeoutputs
+[2026-08-13T08:36:17.092Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:36:17.093Z] [DEBUG] [server:routed] [INFO] server session disconnected session_id=5IDJLPQBT2GZBN4UB5RJZG6V75
+[2026-08-13T08:36:17.093Z] [DEBUG] [server:response_writer] Setting response status code: 204
+[2026-08-13T08:36:17.096Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=204
+[2026-08-13T08:36:17.096Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=204
+[2026-08-13T08:36:17.097Z] [DEBUG] [server:response_writer] Retrieving captured body: 0 bytes
+[2026-08-13T08:36:17.097Z] [DEBUG] [server:sdk-frontend] <<< SDK Response [routed:safeoutputs] status=204 duration=6.419331ms (empty body)
+[2026-08-13T08:36:19.736Z] [DEBUG] [server:response_writer] Creating new response writer
+[2026-08-13T08:36:19.737Z] [DEBUG] [server:auth] Authenticating request: method=POST, path=/close, remote=172.17.0.1:56054
+[2026-08-13T08:36:19.738Z] [INFO] [auth] Authentication successful, remote=172.17.0.1:56054, path=/close
+[2026-08-13T08:36:19.738Z] [INFO] [shutdown] Close endpoint called: method=POST, path=/close, remote=172.17.0.1:56054
+[2026-08-13T08:36:19.738Z] [DEBUG] [server:handlers] Initiating gateway shutdown
+[2026-08-13T08:36:19.739Z] [INFO] [shutdown] Gateway shutdown initiated
+[2026-08-13T08:36:19.740Z] [DEBUG] [launcher:health] Stopping health monitor, waiting for background goroutine to finish
+[2026-08-13T08:36:19.740Z] [DEBUG] [launcher:health] Health monitor stopped
+[2026-08-13T08:36:19.741Z] [INFO] [shutdown] Health monitor stopped
+[2026-08-13T08:36:19.741Z] [DEBUG] [launcher:launcher] Retrieved server IDs: count=1, ids=[safeoutputs]
+[2026-08-13T08:36:19.742Z] [INFO] [shutdown] Terminating 1 backend servers
+[2026-08-13T08:36:19.743Z] [DEBUG] [launcher:launcher] Closing launcher: connections=1, hasSessionPool=true
+[2026-08-13T08:36:19.743Z] [DEBUG] [launcher:launcher] Closing 1 connections
+[2026-08-13T08:36:19.744Z] [DEBUG] [mcp:connection] Closing connection: serverID=safeoutputs, isHTTP=false
+[2026-08-13T08:36:19.746Z] [DEBUG] [launcher:launcher] Stopping session connection pool
+[2026-08-13T08:36:19.746Z] [DEBUG] [launcher:pool] Stopping connection pool
+[2026-08-13T08:36:19.747Z] [DEBUG] [launcher:pool] Context cancelled, stopping cleanup
+[2026-08-13T08:36:19.747Z] [DEBUG] [launcher:pool] Cleanup goroutine stopped
+[2026-08-13T08:36:19.748Z] [DEBUG] [launcher:pool] Closing connection: backend=safeoutputs, session=vLNvWYt96cBC15Q0WjD8mJaVKJP0a0xHs3fkvz0ymjKhQNFMfdz05JTCltv
+[2026-08-13T08:36:19.749Z] [DEBUG] [launcher:pool] Connection pool stopped
+[2026-08-13T08:36:19.749Z] [DEBUG] [launcher:launcher] Launcher closed successfully
+[2026-08-13T08:36:19.750Z] [DEBUG] [guard:wasm] Closing global compilation cache
+[2026-08-13T08:36:19.750Z] [DEBUG] [guard:wasm] Global compilation cache closed
+[2026-08-13T08:36:19.751Z] [INFO] [shutdown] Backend servers terminated successfully
+[2026-08-13T08:36:19.751Z] [DEBUG] [server:handlers] Shutdown completed: servers_terminated=1
+[2026-08-13T08:36:19.752Z] [DEBUG] [httputil:httputil] Writing JSON response: statusCode=200
+[2026-08-13T08:36:19.753Z] [DEBUG] [server:response_writer] Setting response status code: 200
+[2026-08-13T08:36:19.753Z] [DEBUG] [httputil:httputil] BaseResponseWriter.WriteHeader: capturing status code=200
+[2026-08-13T08:36:19.754Z] [DEBUG] [httputil:httputil] JSON response body size: 80 bytes
+[2026-08-13T08:36:19.754Z] [DEBUG] [server:response_writer] Writing response body: 80 bytes
+[2026-08-13T08:36:19.755Z] [INFO] [shutdown] Close endpoint response sent: servers_terminated=1, remote=172.17.0.1:56054
+[2026-08-13T08:36:19.755Z] [DEBUG] [server:response_writer] Retrieving captured body: 80 bytes
+[2026-08-13T08:36:19.756Z] [DEBUG] [server:response_writer] Retrieving captured body: 80 bytes
+[2026-08-13T08:36:19.757Z] [DEBUG] [server:helpers] [172.17.0.1:56054] POST /close - Status: 200, Response: {"message":"Gateway shutdown initiated","serversTerminated":1,"status":"closed"}
+[2026-08-13T08:36:19.760Z] [INFO] [shutdown] Gateway process exiting via context cancellation
+[2026-08-13T08:36:19.760Z] [INFO] [shutdown] Shutting down gateway...
+[2026-08-13T08:36:19.763Z] [DEBUG] [cmd:root] Shutdown initiated, beginning graceful HTTP server shutdown
+[2026-08-13T08:36:19.764Z] [DEBUG] [cmd:root] Shutdown signal received, initiating graceful shutdown
+[2026-08-13T08:36:19.764Z] [DEBUG] [cmd:root] HTTP server shut down gracefully
+[2026-08-13T08:36:19.765Z] [DEBUG] [cmd:root] Shutting down tracing provider
+[2026-08-13T08:36:19.765Z] [DEBUG] [cmd:root] Tracing provider shut down successfully
+[2026-08-13T08:36:19.766Z] [DEBUG] [guard:wasm] Closing global compilation cache
+[2026-08-13T08:36:19.766Z] [DEBUG] [guard:wasm] Global compilation cache is nil, nothing to close

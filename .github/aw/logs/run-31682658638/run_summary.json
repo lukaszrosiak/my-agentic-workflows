@@ -1,0 +1,876 @@
+{
+  "cli_version": "v0.85.4",
+  "run_id": 31682658638,
+  "processed_at": "2026-08-13T12:14:34.7425513+02:00",
+  "run": {
+    "databaseId": 31682658638,
+    "number": 1,
+    "url": "https://github.com/lukaszrosiak/my-agentic-workflows/actions/runs/31682658638",
+    "status": "completed",
+    "conclusion": "success",
+    "workflowName": "Daily Report Status",
+    "workflowPath": ".github/workflows/daily-report-status.lock.yml",
+    "createdAt": "2026-08-13T08:34:30Z",
+    "startedAt": "2026-08-13T08:34:30Z",
+    "updatedAt": "2026-08-13T08:38:08Z",
+    "event": "workflow_dispatch",
+    "headBranch": "master",
+    "headSha": "b947dad7570ec047a40517b98076af0a615e9b18",
+    "displayTitle": "Daily Report Status",
+    "Duration": 218000000000,
+    "ActionMinutes": 0,
+    "TokenUsage": 56238,
+    "Turns": 4,
+    "TurnsAvailable": false,
+    "ErrorCount": 0,
+    "WarningCount": 0,
+    "MissingToolCount": 0,
+    "MissingDataCount": 0,
+    "NoopCount": 0,
+    "safe_items_count": 1,
+    "EffectiveTokens": 0,
+    "AvgTimeBetweenTurns": 0,
+    "LogsPath": "/home/lukasz/01_personal/01-projects/my-agentic-workflows/.github/aw/logs/run-31682658638"
+  },
+  "metrics": {
+    "TokenUsage": 56238,
+    "EstimatedCost": 0,
+    "Turns": 4,
+    "ToolCalls": [
+      {
+        "Name": "bash",
+        "CallCount": 2,
+        "MaxInputSize": 649,
+        "MaxOutputSize": 0,
+        "MaxDuration": 0,
+        "OutputSample": ""
+      },
+      {
+        "Name": "safeoutputs-create_issue",
+        "CallCount": 1,
+        "MaxInputSize": 761,
+        "MaxOutputSize": 0,
+        "MaxDuration": 0,
+        "OutputSample": ""
+      }
+    ],
+    "ToolSequences": null,
+    "AvgTimeBetweenTurns": 0,
+    "MaxTimeBetweenTurns": 0,
+    "MedianTimeBetweenTurns": 0,
+    "StdDevTimeBetweenTurns": 0
+  },
+  "task_domain": {
+    "name": "research",
+    "label": "Research",
+    "reason": "Workflow naming and instructions suggest exploratory analysis or reporting."
+  },
+  "behavior_fingerprint": {
+    "execution_style": "directed",
+    "tool_breadth": "narrow",
+    "actuation_style": "selective_write",
+    "resource_profile": "lean",
+    "dispatch_mode": "standalone",
+    "agentic_fraction": 0.5
+  },
+  "access_analysis": null,
+  "firewall_analysis": {
+    "allowed_domains": [
+      "api.githubcopilot.com:443"
+    ],
+    "total_requests": 10,
+    "allowed_requests": 10,
+    "blocked_requests": 0,
+    "requests_by_domain": {
+      "api.githubcopilot.com:443": {
+        "allowed": 10,
+        "blocked": 0
+      }
+    }
+  },
+  "policy_analysis": {
+    "policy_summary": "10 rules, SSL Bump disabled, DLP disabled",
+    "rule_hits": [],
+    "total_requests": 0,
+    "allowed_count": 0,
+    "denied_count": 0,
+    "unique_domains": 0
+  },
+  "redacted_domains_analysis": null,
+  "missing_tools": null,
+  "missing_data": null,
+  "noops": null,
+  "mcp_failures": null,
+  "token_usage_summary": {
+    "total_input_tokens": 3033,
+    "total_output_tokens": 1103,
+    "total_cache_read_tokens": 78599,
+    "total_cache_write_tokens": 28095,
+    "total_requests": 4,
+    "total_duration_ms": 16941,
+    "total_response_bytes": 59113,
+    "cache_efficiency": 0,
+    "total_aic": 9.698730000000001,
+    "ambient_context": {
+      "input_tokens": 3027,
+      "cached_tokens": 0
+    },
+    "by_model": {
+      "claude-sonnet-5": {
+        "provider": "copilot",
+        "input_tokens": 3033,
+        "output_tokens": 1103,
+        "cache_read_tokens": 78599,
+        "cache_write_tokens": 28095,
+        "requests": 4,
+        "duration_ms": 16941,
+        "response_bytes": 59113,
+        "aic": 9.698730000000001
+      }
+    },
+    "subagent_model_requests": [
+      {
+        "agent_name": "container",
+        "requested_model": "s",
+        "invocation_count": 1,
+        "effective_model": "claude-sonnet-5",
+        "reason_code": "REQUESTED_MODEL_NOT_OBSERVED"
+      },
+      {
+        "agent_name": "host",
+        "requested_model": "s",
+        "invocation_count": 1,
+        "effective_model": "claude-sonnet-5",
+        "reason_code": "REQUESTED_MODEL_NOT_OBSERVED"
+      },
+      {
+        "agent_name": "peer",
+        "requested_model": "s",
+        "invocation_count": 1,
+        "effective_model": "claude-sonnet-5",
+        "reason_code": "REQUESTED_MODEL_NOT_OBSERVED"
+      },
+      {
+        "agent_name": "server",
+        "requested_model": "s",
+        "invocation_count": 1,
+        "effective_model": "claude-sonnet-5",
+        "reason_code": "REQUESTED_MODEL_NOT_OBSERVED"
+      }
+    ],
+    "subagent_model_actuals": [
+      {
+        "model": "claude-sonnet-5",
+        "provider": "copilot",
+        "requests": 4
+      }
+    ],
+    "mismatch_count": 4,
+    "warnings": [
+      "partial or incorrect data: sub-agent model requests are inferred from agent-stdio.log; use token_usage.jsonl for reliable token consumption"
+    ]
+  },
+  "github_rate_limit_usage": {
+    "total_requests_made": 5,
+    "core_consumed": 6,
+    "core_consumed_source": "response_headers_delta",
+    "core_remaining": 4987,
+    "core_limit": 5000,
+    "resources": [
+      {
+        "resource": "core",
+        "requests_made": 5,
+        "quota_consumed": 6,
+        "final_remaining": 4987,
+        "limit": 5000
+      }
+    ]
+  },
+  "artifacts_list": [
+    ".downloaded-artifacts/all",
+    "agent-stdio.log",
+    "agent_output.json",
+    "agent_usage.json",
+    "agentic-workflow-usage-cache.jsonl",
+    "aw-prompts/prompt-import-tree.json",
+    "aw-prompts/prompt-template.txt",
+    "aw-prompts/prompt.txt",
+    "aw_info.json",
+    "awf-config.json",
+    "base/.github/.vscode/settings.json",
+    "base/.github/aw/actions-lock.json",
+    "base/.github/skills/agentic-workflows/SKILL.md",
+    "base/.github/workflows/daily-report-status.lock.yml",
+    "base/.github/workflows/daily-report-status.md",
+    "base/.github/workflows/issue_summary.lock.yml",
+    "base/.github/workflows/issue_summary.md",
+    "detection.log",
+    "github_rate_limits.jsonl",
+    "mcp-logs/gateway.md",
+    "mcp-logs/mcp-gateway.log",
+    "mcp-logs/observed-url-domains.json",
+    "mcp-logs/proxy.log",
+    "mcp-logs/rpc-messages.jsonl",
+    "mcp-logs/safeoutputs/server.log",
+    "mcp-logs/safeoutputs.log",
+    "mcp-logs/start-gateway.log",
+    "mcp-logs/stderr.log",
+    "mcp-logs/tools.json",
+    "models.json",
+    "pre-agent-audit.txt",
+    "safe-output-items.jsonl",
+    "safeoutputs.jsonl",
+    "sandbox/agent/logs/process-1786610157064-125.log",
+    "sandbox/firewall/audit/awf-resolved-config.json",
+    "sandbox/firewall/audit/docker-compose.redacted.yml",
+    "sandbox/firewall/audit/policy-manifest.json",
+    "sandbox/firewall/audit/squid.conf",
+    "sandbox/firewall/awf-reflect.json",
+    "sandbox/firewall/logs/access.log",
+    "sandbox/firewall/logs/api-proxy-logs/models.json",
+    "sandbox/firewall/logs/api-proxy-logs/otel.jsonl",
+    "sandbox/firewall/logs/api-proxy-logs/token-tracker-audit.jsonl",
+    "sandbox/firewall/logs/api-proxy-logs/token-usage.jsonl",
+    "sandbox/firewall/logs/audit.jsonl",
+    "sandbox/firewall/logs/cache.log",
+    "sandbox/firewall/logs/cli-proxy-logs/access.jsonl",
+    "temporary-id-map.json",
+    "usage/activity/summary.json",
+    "usage/agent/token_usage.jsonl",
+    "usage/agent_usage.json",
+    "usage/detection/token_usage.jsonl",
+    "usage/github_rate_limits.jsonl",
+    "workflow-logs/0_conclusion.txt",
+    "workflow-logs/1_safe_outputs.txt",
+    "workflow-logs/2_detection.txt",
+    "workflow-logs/3_agent.txt",
+    "workflow-logs/4_activation.txt",
+    "workflow-logs/activation/system.txt",
+    "workflow-logs/agent/system.txt",
+    "workflow-logs/conclusion/system.txt",
+    "workflow-logs/detection/system.txt",
+    "workflow-logs/safe_outputs/system.txt"
+  ],
+  "job_details": [
+    {
+      "name": "activation",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-08-13T08:34:34Z",
+      "completed_at": "2026-08-13T08:34:50Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Generate agentic run info",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restore daily AIC usage cache",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restore daily AIC usage cache (artifact fallback)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check daily workflow token guardrail",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check for OAuth tokens",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout .github and .agents folders",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Save agent config folders for base branch restoration",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check workflow lock file",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check compile-agentic version",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Log runtime features",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Create prompt with built-in context",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Interpolate variables and render templates",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Substitute placeholders",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Validate prompt placeholders",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Print prompt",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload activation artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout .github and .agents folders",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "Duration": 16000000000
+    },
+    {
+      "name": "agent",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-08-13T08:34:53Z",
+      "completed_at": "2026-08-13T08:36:28Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set runtime paths",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Create gh-aw temp directory",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure gh CLI for GitHub Enterprise",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download activation artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure Git credentials",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout PR branch",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Install GitHub Copilot CLI",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install AWF binary",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Determine automatic lockdown mode for GitHub MCP Server",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restore agent config folders from base branch",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Restore inline sub-agents from activation artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restore inline skills from activation artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download container images",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Generate Safe Outputs Config",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Generate Safe Outputs Tools",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Start MCP Gateway",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Mount MCP servers as CLIs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Clean credentials",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Audit pre-agent workspace",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Start CLI Proxy",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Execute GitHub Copilot CLI",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop CLI Proxy",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Detect agent errors",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure Git credentials",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Copy Copilot session state files to logs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop MCP Gateway",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Redact secrets in logs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Append agent step summary",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Copy Safe Outputs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Ingest agent output",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Parse agent logs for step summary",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Parse MCP Gateway logs for step summary",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Print firewall logs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Parse token usage for step summary",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Print AWF reflect summary",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Write agent output placeholder if missing",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload agent artifacts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "Duration": 95000000000
+    },
+    {
+      "name": "detection",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-08-13T08:36:30Z",
+      "completed_at": "2026-08-13T08:37:28Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download agent output artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup agent output environment variable",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout repository for patch context",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Clean stale firewall files from agent artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download container images",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check if detection needed",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Clear MCP Config for detection",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare threat detection files",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup threat detection",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Ensure threat-detection directory and log",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup Node.js",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install GitHub Copilot CLI",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install AWF binary",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Execute GitHub Copilot CLI",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Parse threat detection token usage for step summary",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload threat detection log",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Parse and conclude threat detection",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Setup Node.js",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "Duration": 58000000000
+    },
+    {
+      "name": "safe_outputs",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-08-13T08:37:31Z",
+      "completed_at": "2026-08-13T08:37:42Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download agent output artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup agent output environment variable",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure GH_HOST for enterprise compatibility",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Process Safe Outputs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload Safe Outputs Items",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "Duration": 11000000000
+    },
+    {
+      "name": "conclusion",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-08-13T08:37:46Z",
+      "completed_at": "2026-08-13T08:38:08Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download agent output artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Setup agent output environment variable",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download Safe Outputs Items Manifest",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Collect usage artifact files",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload usage artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restore daily AIC usage cache",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Write daily AIC usage cache entry",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Save daily AIC usage cache",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload daily AIC usage cache artifact",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Process no-op messages",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Log detection run",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Record missing tool",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Record incomplete",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Handle agent failure",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Report failed jobs",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Setup Scripts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "Duration": 22000000000
+    }
+  ]
+}

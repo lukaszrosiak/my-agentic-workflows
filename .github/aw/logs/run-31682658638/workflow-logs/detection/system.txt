@@ -1,0 +1,9 @@
+2026-08-13T08:36:28.9640000Z Job is about to start running on the hosted runner: GitHub Actions 1000000007
+2026-08-13T08:36:28.9640000Z Job is waiting for a hosted runner to come online.
+2026-08-13T08:36:28.9610000Z Requested labels: ubuntu-latest
+2026-08-13T08:36:28.9610000Z Job defined at: lukaszrosiak/my-agentic-workflows/.github/workflows/daily-report-status.lock.yml@refs/heads/master
+2026-08-13T08:36:28.9610000Z Waiting for a runner to pick up this job...
+2026-08-13T08:36:28.9580000Z Evaluating detection.if
+2026-08-13T08:36:28.9580000Z Evaluating: (always() && (needs.agent.result != 'skipped'))
+2026-08-13T08:36:28.9580000Z Expanded: (true && ('success' != 'skipped'))
+2026-08-13T08:36:28.9580000Z Result: true
